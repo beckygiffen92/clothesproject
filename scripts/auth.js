@@ -1,3 +1,13 @@
+//listen to user auth status changes 
+auth.onAuthStateChanged(user =>{        //looking for changes in the user - whether logged in or out
+    if (user){
+        console.log('user logged in', user)
+    }
+    else{
+        console.log('user logged out')
+    }
+});
+
 //signup - creating a variable that finds the id name of #signupForm
 const signUpForm = document.querySelector('#signupForm');
 
@@ -30,7 +40,22 @@ signUpForm.addEventListener('submit', (e)=>{
 const signout = document.querySelector('#signout');
 signout.addEventListener('click', (e)=>{
     e.preventDefault();
-    auth.signOut().then(()=>{
-        console.log('user signed off');
-    });
+    auth.signOut();
 });
+
+//login
+const loginForm = document.querySelector('#login-form')
+loginForm.addEventListener('submit',(e) =>{
+    e.preventDefault();
+   //get user information - can use const email again as its nested in this fuction
+   
+   const email = loginForm['login-email'].value;    //getting email from the loginform
+   const password = loginForm['login-password'].value;
+   auth.signInWithEmailAndPassword(email, password).then(cred =>{       //referencing the const email/password created from the values above
+   
+    //close modal and refresh form back to normal
+    const modal = document.querySelector('#modal-signin');
+    M.Modal.getInstance(modal).close();
+    loginForm.reset();
+   })     
+} )
