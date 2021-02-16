@@ -1,3 +1,7 @@
+//get data
+db.collection('discounts').get().then(snapshot =>{
+    setUpMembersDisc(snapshot.docs);            //retrieve data and settung it up inside setupmemberdisc
+})
 //listen to user auth status changes 
 auth.onAuthStateChanged(user =>{        //looking for changes in the user - whether logged in or out
     if (user){
