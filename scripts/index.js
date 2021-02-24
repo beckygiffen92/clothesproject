@@ -1,4 +1,19 @@
 const discountList = document.querySelector('#discount-list')
+//variables for nav bar logged in or out
+const loggedOutLinks = document.querySelectorAll('.logged-out');
+const loggedInLinks = document.querySelectorAll('.logged-in');
+
+const setUpNavbar = (user) => {
+  if (user){
+    //if there is a user (is logged in) maked each logged in link display
+    loggedInLinks.forEach(item => item.style.display = 'block');
+    loggedOutLinks.forEach(item => item.style.display = 'none');  //hiding loggedout links when user is loggedin
+  }
+  else {
+    loggedInLinks.forEach(item => item.style.display = 'none');
+    loggedOutLinks.forEach(item => item.style.display = 'block'); 
+  }
+}
 
 const setUpMembersDisc =(data) =>{        //putting data inside the array
   //setting up if the user is logged in the discountlist array has length, then we can see it; 

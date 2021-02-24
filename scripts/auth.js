@@ -5,11 +5,13 @@ auth.onAuthStateChanged(user =>{        //looking for changes in the user - whet
         //get data
 db.collection('discounts').get().then(snapshot =>{
     setUpMembersDisc(snapshot.docs);            //retrieve data and settung it up inside setupmemberdisc
+    setUpNavbar(user);
 })
     }
     else{
         setUpMembersDisc([]);       //empty array if not logged in
         console.log('user logged out')
+        setUpNavbar();  //willshow navbar logged out classes
     }
 });
 

@@ -16,12 +16,23 @@
 <body>
     <h1>eStyler</h1>
 
-    <a href="#" class="grey-text modal-trigger" data-target="modal-account">account</a>
-    <a href="#" class="grey-text modal-trigger" data-target="modal-create">create</a>
-    <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
-    <a href="#" class="grey-text modal-trigger" data-target="modal-signin">Sign in</a>
-    <a href='#' class="grey-text modal-trigger" data-target="modal-members">Discount Codes</a>
-    <a href="#"id="signout">Sign Out</a>
+        <a href="#" class="grey-text modal-trigger" data-target="modal-account" style="display:none">account</a>
+        <a href="#" class="grey-text modal-trigger" data-target="modal-create" style="display:none">create</a>
+        <li class="logged-out"style="display:none">
+        <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
+      </li>
+      <li class="logged-out"style="display:none">
+        <a href="#" class="grey-text modal-trigger" data-target="modal-signin">Sign in</a>
+      </li>
+        <li class="logged-in" style="display:none">
+        <a href='#' class="grey-text modal-trigger" data-target="modal-members">Discount Codes</a>
+      </li>
+      <li class="logged-in"style="display:none">
+        <a href='#' class="grey-text modal-trigger" data-target="modal-onetoone">Book a 1:1</a>
+      </li>
+      <li class="logged-in"style="display:none">
+        <a href="#"id="signout">Sign Out</a>
+      </li>
    <div id="modal-signup"class="modal">
        <div id="modal-content">
     <form id="signupForm">
@@ -73,13 +84,26 @@
                 <div class="account-details"></div>
             </div>
         </div>
+        <div id="modal-onetoone"class="modal">
+          <div class="modal-content">
+              <h3>Book a 1:1 with a Stylist!</h3>
+              <div id="onetone-info">
+                <p>Do you need fashion advice?</p>
+                
+              </div>
+           
+          </div>
+      </div>
         <div id="modal-members"class="modal">
           <div class="modal-content">
-              <h4>Members corner</h4>
+              <h4>Membership</h4>
+              <h5>Discount Codes:</h5>
               <div class="account-details" id ="discount-list">
                 <ul></ul>
                 <ul></ul>
+                
               </div>
+              
           </div>
       </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
