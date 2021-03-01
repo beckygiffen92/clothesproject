@@ -1,9 +1,28 @@
 h1{
-    font-size: 60px!important;
+    font-size: 40px!important;
 }
 a{
     font-size: 40px!important;
 }
 button{
     font-size: 40px!important;
+}
+
+
+/* #topCardsContainer{
+    align-content: center!important;
+    text-align: center!important;
+    margin-right: 100px!important;
+} */
+.card{
+    
+    margin-right: 100px;
+    padding: 80px;
+    /* margin-top: 3rem; */
+    /* text-align: center; */
+   
+}
+
+#firstCard,#secondCard,#thirdCard{
+    margin: 20px!important;
 }
