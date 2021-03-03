@@ -6,40 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
     <title>eStyler - Wardrobe Capsule</title>
 </head>
 <body>
-  
+    <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">eStyler</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li class="logged-out"style="display:none">
+                  <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
+                </li>
+                <li class="logged-out"style="display:none">
+                  <a href="#" class="grey-text modal-trigger" data-target="modal-signin">Sign in</a>
+                </li>
+                <li class="logged-in"style="display:none">
+                  <a href='#' class="grey-text modal-trigger" data-target="modal-onetoone">Personal Stylist</a>
+                </li>
+                
+                <li class="both-in-out"style="display:none">
+                  <a href='#' class="grey-text modal-trigger" data-target="modal-colourpalettes">Colour Palettes</a>
+                </li>
+                  <li class="logged-in" style="display:none">
+                  <a href='#' class="grey-text modal-trigger" data-target="modal-members">Discount Codes</a>
+                </li>
+                
+                <li class="logged-in"style="display:none">
+                  <a href="#"id="signout">Sign Out</a>
+                </li>
+          </ul>
+        </div>
+      </nav>
 
-       <nav class="navbar">
-          <h1>eStyler</h1>
-        <li class="logged-out"style="display:none">
-        <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
-      </li>
-      <li class="logged-out"style="display:none">
-        <a href="#" class="grey-text modal-trigger" data-target="modal-signin">Sign in</a>
-      </li>
-      <li class="logged-in"style="display:none">
-        <a href='#' class="grey-text modal-trigger" data-target="modal-onetoone">Personal Stylist</a>
-      </li>
-      
-      <li class="both-in-out"style="display:none">
-        <a href='#' class="grey-text modal-trigger" data-target="modal-colourpalettes">Colour Palettes</a>
-      </li>
-        <li class="logged-in" style="display:none">
-        <a href='#' class="grey-text modal-trigger" data-target="modal-members">Discount Codes</a>
-      </li>
-      
-      <li class="logged-in"style="display:none">
-        <a href="#"id="signout">Sign Out</a>
-      </li>
 
-    </nav>
     <!-- modals -->
    <div id="modal-signup"class="modal">
        <div id="modal-content">
@@ -60,39 +61,39 @@
         </div>
 
         <div id="modal-signin" class="modal">
-    <div class="modal-content">
-      <h4>Login</h4><br />
-      <form id="login-form">
-        <div class="input-field">
-          <input type="email" id="login-email" required />
-          <label for="login-email">Email address</label>
-        </div>
-        <div class="input-field">
-          <input type="password" id="login-password" required />
-          <label for="login-password">Your password</label>
-        </div>
-        <button class="btn yellow darken-2 z-depth-0">Login</button>
-      </form>
-    </div>
-  </div>
-                 
-       
-        <div id="modal-onetoone"class="modal">
           <div class="modal-content">
-              <h3>Book a 1:1 with a Stylist!</h3>
-              <div id="onetone-info">
-                <p>Do you need fashion advice?</p>
-                
+            <h4>Login</h4><br />
+            <form id="login-form">
+              <div class="input-field">
+                <input type="email" id="login-email" required />
+                <label for="login-email">Email address</label>
               </div>
-           
+              <div class="input-field">
+                <input type="password" id="login-password" required />
+                <label for="login-password">Your password</label>
+              </div>
+              <button class="btn yellow darken-2 z-depth-0">Login</button>
+            </form>
           </div>
-      </div>
-      <div id="modal-colourpalettes"class="modal">
-        <div class="modal-content">
-          <h3>How to choose the right colour for you</h3>
-          <p>lorem ipsum</p>
-        </div>
-      </div>
+         </div>
+                 
+          
+            <div id="modal-onetoone"class="modal">
+              <div class="modal-content">
+                  <h3>Book a 1:1 with a Stylist!</h3>
+                  <div id="onetone-info">
+                  <p>Do you need fashion advice?</p>
+                  </div>
+              </div>
+            </div>
+
+          <div id="modal-colourpalettes"class="modal">
+            <div class="modal-content">
+              <h3>How to choose the right colour for you</h3>
+              <p>lorem ipsum</p>
+            </div>
+          </div>
+
         <div id="modal-members"class="modal">
           <div class="modal-content">
               <h4>Membership</h4>
@@ -100,45 +101,107 @@
               <div class="account-details" id ="discount-list">
                 <ul></ul>
                 <ul></ul>
-                
               </div>
-              
-          </div>
-      </div>
+           </div>
+        </div>
+      <!-- Top Image section -->
       <div class="container"id="topImageContainer">
         <h1>TOP IMAGE HERE</h1>
       </div>
-      <div class="container-fluid mx-auto d-flex justify-content-center col-12"id="topCardsContainer">
-      <div class="row">
-       
-     
-      <div class="card"style="width:18rem"id="firstCard">
-        <div class="card-body">
-          <h5 class="card-title">How eStyler works</h5>
-          <h6 class="card-subtitle mb-2 text-muted">-------</h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-       
-        </div>
-      </div>
-      <div class="card"style="width:18rem" id="secondCard">
-        <div class="card-body">
-          <h5 class="card-title">Our Mission</h5>
-          <h6 class="card-subtitle mb-2 text-muted">-------</h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        
-        </div>
-      </div>
-      <div class="card"style="width:18rem" id="thirdCard">
-        <div class="card-body">
-          <h5 class="card-title">Membership Perks</h5>
-          <h6 class="card-subtitle mb-2 text-muted">-------</h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+      <!-- Card section -->
+    
+      
+      
+        <div class="container"id="topCardsContainer">
+            <div class="row">
+                <div class="card col s12 m12 l3"id="firstCard">
+                  <div class="card-title">
+                    <h3>Membership Perks</h3>
+                  </div>
+                  <div class="card-content">
+                    <p>I am a very simple card. I am good at containing small bits of information.
+                    I am convenient because I require little markup to use effectively.</p>
+                  </div>
+                 
+                </div>
+            
+             
+                  <div class="card col s12 m12 l3"id="secondCard">
+                    <div class="card-title">
+                      <h3>Membership Perks</h3>
+                    </div>
+                    <div class="card-content">
+                      <p>I am a very simple card. I am good at containing small bits of information.
+                      I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    
+                  </div>
+                
+                
+                    <div class="card col s12 m12 l3"id="thirdCard">
+                      <div class="card-title">
+                        <h3>Membership Perks</h3>
+                      </div>
+                      <div class="card-content">
+                        <p>I am a very simple card. I am good at containing small bits of information.
+                        I am convenient because I require little markup to use effectively.</p>
+                      </div>
+                     
+                    </div>
+                  </div>
+                  </div>
+           
          
+        
+
+          <!-- Middle image section -->
+          <div class="row">
+          <div class="container"id="midImageContainer">
+            <h1>Mid image and stat here</h1>
+          </div>
         </div>
-      </div>
-    </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+          <!-- outfit generate section -->
+          <div class="container" id="estyleGenerateSection">
+            <h2>Are you more a dresses and skirts girl or a trousers and jumpsuits girl?</h2>
+            <div class="input-field">
+              <select>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1">Dresses and skirts</option>
+                <option value="2">Trousers and jumpsuits</option>
+                <option value="3">A  bit of both</option>
+              </select>
+              <label>1. Select your style</label>
+            </div>
+            <h2>What event have you got planned for today that you need an outfit for?</h2>
+            <div class="input-field">
+              <select>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1">Unfortunately working to pay the bills!</option>
+                <option value="2">Meeting a friend for coffee</option>
+                <option value="3">A job interview</option>
+                <option value="4">Going for a long walk</option>
+                <option value="5">Having a date night with a current partner</option>
+                <option value="6">Having a date night with a potential partner</option>
+                <option value="7">Drinks with some friends</option>
+                <option value="8">Going to a concert</option>
+                <option value="9">Going to a sporting event</option>
+                <option value="10">Yoga/Working out</option>
+              </select>
+              <label>2. Select your event</label>
+            </div>
+
+            <label>3. Press button to find an outfit!</label></br>
+            <button type="submit"id="outfitGenerateBtn">Find outfit!</button>
+          </div>
+         
+          
+          
+        
+          
+         
+    
 <script>
     // Your web app's Firebase configuration
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -164,7 +227,9 @@
     //update firestore settings - need this if using firestore 5 and above otherwise will throw errors
   db.settings({ timestampsInSnapshots: true})
   </script> 
+ 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  
     <script src="scripts/index.js"></script>
     <script src="scripts/auth.js"></script>
 
