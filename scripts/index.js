@@ -47,8 +47,73 @@ document.addEventListener('DOMContentLoaded', function() {
   
   });
  
+  // working with materliaze to use select menu on indexpage
   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('select');
     var instances = M.FormSelect.init(elems, {});
   });
+      
+  // outfit generate section
+
+  let workTopTrousers = "Blouse";
+  let workBottomTrousers = "Trousers";
+  let workTopSkirt = "Dress";
+
+  let friendTopTrousers ="Jumper";
+  let friendBottomTrousers="Jeans";
+  let sportTopTrousers = "T-shirt";
+
+
+
+  let userOutfitTop =['wooljumper','blouse','shirt','blazer','tshirt'];
+  let userOutfitBottom =['jeans','culottes','widelegs','midiskirt','maxiskirt'];
+
+  let userSelectionTopOne = userOutfitTop[1];
+  let userSelectionBottomOne = userOutfitBottom[1];
+
+  let userSelectionTopTwo = userOutfitTop[2];
+  let userSelectionBottomTwo = userOutfitBottom[2];
+
+  let finalSelectionOne = userSelectionTopOne + userSelectionBottomOne;
+  let finalSelectionTwo = userSelectionTopTwo + userSelectionBottomTwo;
+
+  // function generateOutfit(){
+  //  console.log('pressed');
+  // document.getElementById('outfitOne').innerHTML = finalSelection;
+  // }
+
+  
+    
+
+    
+    // get references to select list and display text box
+    var userSelectedStyle = document.getElementById('selectStyle');
+    var userSelectedOccasion = document.getElementById('selectOccasion');
+
+    var getValue = userSelectedStyle.options[userSelectedStyle.selectedIndex].value;
+    var getSecondValue = userSelectedOccasion.options[userSelectedOccasion.selectedIndex].value;
+    
+   
+  
+    function startestyle() {
+
+      var userSelectedStyle = document.getElementById('selectStyle');
+      var userSelectedOccasion = document.getElementById('selectOccasion');
+  
+      var getValue = userSelectedStyle.options[userSelectedStyle.selectedIndex].value;
+      var getSecondValue = userSelectedOccasion.options[userSelectedOccasion.selectedIndex].value;
+       if(getValue === '3'&& getSecondValue === '3'){
+         document.getElementById("outfitOne").innerHTML = finalSelectionOne;
         
+       }
+       else {
+         document.getElementById("outfitOne").innerHTML =finalSelectionTwo;
+       }
+       console.log(getValue);
+    }
+
+    // assign onclick handlers to the buttons
+    document.getElementById('outfitGenerateBtn').addEventListener('click', startestyle );;
+   
+
+    

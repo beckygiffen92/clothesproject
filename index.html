@@ -168,34 +168,45 @@
           <div class="container col s12" id="estyleGenerateSection">
             <h2>Are you more a dresses and skirts girl or a trousers and jumpsuits girl?</h2>
             <div class="input-field">
-              <select>
+              <select id ="selectStyle">
                 <option value="" disabled selected>Choose your option</option>
-                <option value="1">Dresses and skirts</option>
-                <option value="2">Trousers and jumpsuits</option>
-                <option value="3">A  bit of both</option>
+                <option value="1"id="styleDress">Dresses and skirts</option>
+                <option value="2"id="styleTrousers">Trousers and jumpsuits</option>
+                <option value="3"id="styleBoth">A  bit of both</option>
               </select>
               <label>1. Select your style</label>
             </div>
             <h2>What event have you got planned for today that you need an outfit for?</h2>
             <div class="input-field">
-              <select>
+              <select id="selectOccasion">
                 <option value="" disabled selected>Choose your option</option>
-                <option value="1">Unfortunately working to pay the bills!</option>
-                <option value="2">Meeting a friend for coffee</option>
-                <option value="3">A job interview</option>
-                <option value="4">Going for a long walk</option>
-                <option value="5">Having a date night with a current partner</option>
-                <option value="6">Having a date night with a potential partner</option>
-                <option value="7">Drinks with some friends</option>
-                <option value="8">Going to a concert</option>
-                <option value="9">Going to a sporting event</option>
-                <option value="10">Yoga/Working out</option>
+                <option value="1"id="occasionWorking">Unfortunately working to pay the bills!</option>
+                <option value="2"id="occasionMeetingFriend">Meeting a friend for coffee</option>
+                <option value="3"id="occasionInterview">A job interview</option>
+                <option value="4"id="occasionWalking">Going for a long walk</option>
+                <option value="5"id="occasionDateCurrent">Having a date night with a current partner</option>
+                <option value="6"id="occasionDateNew">Having a date night with a potential partner</option>
+                <option value="7"id="occasionDrinks">Drinks with some friends</option>
+                <option value="8"id="occasionConcert">Going to a concert</option>
+                <option value="9"id="occasionSportEvent">Going to a sporting event</option>
+                <option value="10"id="occasionYoga">Yoga/Working out</option>
               </select>
               <label>2. Select your event</label>
             </div>
 
             <label>3. Press button to find an outfit!</label></br>
             <button type="submit"id="outfitGenerateBtn">Find outfit!</button>
+          </div>
+
+          <!-- outfit generater section -->
+          <div class="container col 12"id="outfitGenerateContainer">
+            <p id="outfitOne">
+
+            </p>
+            <h1>OR</h1>
+            <p id="outfitTwo">
+
+            </p>
           </div>
          
           
