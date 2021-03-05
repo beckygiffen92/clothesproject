@@ -53,43 +53,24 @@ document.addEventListener('DOMContentLoaded', function() {
     var instances = M.FormSelect.init(elems, {});
   });
       
-  // outfit generate section
+  // -------------OUTFIT GENERATE SECTION!!! --------------------------------
 
-  let workTopTrousers = "Blouse";
-  let workBottomTrousers = "Trousers";
-  let workTopSkirt = "Dress";
-
-  let friendTopTrousers ="Jumper";
-  let friendBottomTrousers="Jeans";
-  let sportTopTrousers = "T-shirt";
-
-
-
-  let userOutfitTop =['wooljumper','blouse','shirt','blazer','tshirt'];
-  let userOutfitBottom =['jeans','culottes','widelegs','midiskirt','maxiskirt'];
-
-  let userSelectionTopOne = userOutfitTop[1];
-  let userSelectionBottomOne = userOutfitBottom[1];
-
-  let userSelectionTopTwo = userOutfitTop[2];
-  let userSelectionBottomTwo = userOutfitBottom[2];
-
-  let finalSelectionOne = userSelectionTopOne + userSelectionBottomOne;
-  let finalSelectionTwo = userSelectionTopTwo + userSelectionBottomTwo;
-
-  // function generateOutfit(){
-  //  console.log('pressed');
-  // document.getElementById('outfitOne').innerHTML = finalSelection;
-  // }
-
+  // creating arrays of outfit choices
+  let workWear = ['trousers and blouse','dress and heels','culottes and rollneck'];
+  let casualWear =['jumper and jeans', 'tshirt and midi','wide leg and blazer'];
+  let introEstyle = 'Here are the outfits we have generated for you!';
   
-    
+  // creating consts of random array 
+  const randomWork = workWear[Math.floor(Math.random() * workWear.length)];
+  const randomWorkOptTwo = workWear[Math.floor(Math.random() * workWear.length)];
+  const randomCasual = casualWear[Math.floor(Math.random() * casualWear.length)];
+  const randomCasualOptTwo = casualWear[Math.floor(Math.random() * casualWear.length)];
 
-    
     // get references to select list and display text box
     var userSelectedStyle = document.getElementById('selectStyle');
     var userSelectedOccasion = document.getElementById('selectOccasion');
 
+  // gets the value that the user selected
     var getValue = userSelectedStyle.options[userSelectedStyle.selectedIndex].value;
     var getSecondValue = userSelectedOccasion.options[userSelectedOccasion.selectedIndex].value;
     
@@ -97,17 +78,17 @@ document.addEventListener('DOMContentLoaded', function() {
   
     function startestyle() {
 
-      var userSelectedStyle = document.getElementById('selectStyle');
-      var userSelectedOccasion = document.getElementById('selectOccasion');
-  
-      var getValue = userSelectedStyle.options[userSelectedStyle.selectedIndex].value;
-      var getSecondValue = userSelectedOccasion.options[userSelectedOccasion.selectedIndex].value;
-       if(getValue === '3'&& getSecondValue === '3'){
-         document.getElementById("outfitOne").innerHTML = finalSelectionOne;
+        // displays introEstyle in document hereARe the outfits
+        document.getElementById("hereAreTheOutfits").innerHTML = introEstyle;
+      // reading if the user has selected X value, display var displayed in Y
+       if(getValue === '1'&& getSecondValue === '1'){
+         document.getElementById("outfitOne").innerHTML = randomWork;
+         document.getElementById("outfitTwo").innerHTML = randomWorkOptTwo;
         
        }
        else {
-         document.getElementById("outfitOne").innerHTML =finalSelectionTwo;
+         document.getElementById("outfitOne").innerHTML =randomCasual;
+         document.getElementById("outfitTwo").innerHTML =randomCasualOptTwo;
        }
        console.log(getValue);
     }
