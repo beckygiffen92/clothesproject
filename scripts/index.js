@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
   let workWear = ['trousers and blouse','dress and heels','culottes and rollneck'];
   let casualWear =['jumper and jeans', 'tshirt and midi','wide leg and blazer'];
   let introEstyle = 'Here are the outfits we have generated for you!';
+  let reshuffleHeading ="Don't like either? Thats ok! You can reshuffle!";
   
   // creating consts of random array 
   const randomWork = workWear[Math.floor(Math.random() * workWear.length)];
@@ -73,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // gets the value that the user selected
     var getValue = userSelectedStyle.options[userSelectedStyle.selectedIndex].value;
     var getSecondValue = userSelectedOccasion.options[userSelectedOccasion.selectedIndex].value;
-    
+    document.getElementById("reShuffleBtn").style.display = 'none';
    
   
     function startestyle() {
@@ -91,10 +92,14 @@ document.addEventListener('DOMContentLoaded', function() {
          document.getElementById("outfitTwo").innerHTML =randomCasualOptTwo;
        }
        console.log(getValue);
+       document.getElementById("reShuffleText").innerHTML = reshuffleHeading;
+       document.getElementById("reShuffleBtn").style.display = 'block';
     }
 
     // assign onclick handlers to the buttons
     document.getElementById('outfitGenerateBtn').addEventListener('click', startestyle );;
+    // need to reshuffle button to work
+    document.getElementById('reShuffleBtn').addEventListener('click', startestyle );;
    
 
     
