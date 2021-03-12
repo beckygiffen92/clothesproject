@@ -68,38 +68,89 @@ document.addEventListener('DOMContentLoaded', function() {
   const randomCasualOptTwo = casualWear[Math.floor(Math.random() * casualWear.length)];
 
     // get references to select list and display text box
-    var userSelectedStyle = document.getElementById('selectStyle');
-    var userSelectedOccasion = document.getElementById('selectOccasion');
+    const userSelectedStyle = document.getElementById('selectStyle');
+    const userSelectedOccasion = document.getElementById('selectOccasion');
 
   // gets the value that the user selected
-    var getValue = userSelectedStyle.options[userSelectedStyle.selectedIndex].value;
-    var getSecondValue = userSelectedOccasion.options[userSelectedOccasion.selectedIndex].value;
+  
     document.getElementById("reShuffleBtn").style.display = 'none';
-   
+    
+//     ('#outfitGenerateBtn').click(function(){
+//       if ($("#selectStyle ")[0].selectedIndex <= 0) {
+//                  alert("Not selected");
+//              }
+//      else
+//         startestyle();
+//  });
+
+// NEED TO WORK ON THIS
   
     function startestyle() {
+      var getValue = userSelectedStyle.options[userSelectedStyle.selectedIndex].value;
+    var getSecondValue = userSelectedOccasion.options[userSelectedOccasion.selectedIndex].value;
 
         // displays introEstyle in document hereARe the outfits
-        document.getElementById("hereAreTheOutfits").innerHTML = introEstyle;
+        
       // reading if the user has selected X value, display var displayed in Y
-       if(getValue === '1'&& getSecondValue === '1'){
+       if (getValue === '1'&& getSecondValue === '1'){
+        
          document.getElementById("outfitOne").innerHTML = randomWork;
          document.getElementById("outfitTwo").innerHTML = randomWorkOptTwo;
-        
+         document.getElementById("hereAreTheOutfits").innerHTML = introEstyle;
+
+              
        }
+      //  ifno value is selected alert this message
+      else if (getValue ==='' && getSecondValue === '' ){
+        alert("Oops! You need to select an option!");
+        
+        }
        else {
          document.getElementById("outfitOne").innerHTML =randomCasual;
          document.getElementById("outfitTwo").innerHTML =randomCasualOptTwo;
+         document.getElementById("hereAreTheOutfits").innerHTML = introEstyle;
+         console.log(randomCasual);
        }
-       console.log(getValue);
+      
        document.getElementById("reShuffleText").innerHTML = reshuffleHeading;
        document.getElementById("reShuffleBtn").style.display = 'block';
     }
 
+    function startestyleAgain() {
+      var getValue = userSelectedStyle.options[userSelectedStyle.selectedIndex].value;
+    var getSecondValue = userSelectedOccasion.options[userSelectedOccasion.selectedIndex].value;
+
+        // displays introEstyle in document hereARe the outfits
+        
+      // reading if the user has selected X value, display var displayed in Y
+       if (getValue === '1'&& getSecondValue === '1'){
+         document.getElementById("outfitOne").innerHTML = randomWork;
+         document.getElementById("outfitTwo").innerHTML = randomWorkOptTwo;
+         document.getElementById("hereAreTheOutfits").innerHTML = introEstyle;
+        
+       }
+
+      else if (getValue ==='' && getSecondValue === '' ){
+        alert("Oops! You need to select an option!");
+        
+        }
+       else {
+         document.getElementById("outfitOne").innerHTML =randomCasual;
+         document.getElementById("outfitTwo").innerHTML =randomCasualOptTwo;
+         document.getElementById("hereAreTheOutfits").innerHTML = introEstyle;
+       }
+      
+       document.getElementById("reShuffleText").innerHTML = reshuffleHeading;
+       document.getElementById("reShuffleBtn").style.display = 'block';
+
+
+       console.log(getValue,getSecondValue);
+    }
+    
     // assign onclick handlers to the buttons
     document.getElementById('outfitGenerateBtn').addEventListener('click', startestyle );;
     // need to reshuffle button to work
-    document.getElementById('reShuffleBtn').addEventListener('click', startestyle );;
+    document.getElementById('reShuffleBtn').addEventListener('click', startestyleAgain );;
    
 
     
