@@ -60,8 +60,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // creating arrays of outfit choices
   let workWear = ['trousers and blouse','dress and heels','culottes and rollneck'];
-  let workSummer = ['slinky dress','shorts and tee','culottes and tee'];
+  let workSummer = ['slinky dress','shorts and blouse','culottes and tee'];
   let casualWear =['jumper and jeans', 'tshirt and midi','wide leg and blazer'];
+  let casualSummer = ['tee and midi skirt','midi dress','maxi dress'];
+  let romanceWear = ['blouse and wide leg trousers','jeans and heels','midi dress'];
+  let concertWear = ['rock tee and skinny jeans', 'band tee and midi skirt','black top and black jeans','dungarees, band tee and doc martens','rockabilly dress and bandana'];
+
+
   let introEstyle = 'Here are the outfits we have generated for you!';
   let reshuffleHeading ="Don't like either? Thats ok! You can reshuffle!";
   let or ="OR";
@@ -75,41 +80,40 @@ document.addEventListener('DOMContentLoaded', function() {
   // gets the value that the user selected
   
     document.getElementById("reShuffleBtn").style.display = 'none';
-    
-//     ('#outfitGenerateBtn').click(function(){
-//       if ($("#selectStyle ")[0].selectedIndex <= 0) {
-//                  alert("Not selected");
-//              }
-//      else
-//         startestyle();
-//  });
+
 
 // NEED TO WORK ON THIS
     var getValue;
     var getSecondValue;
     var randomWork;
+    var randomWSummer;
     var randomWorkOptTwo;
     var randomCasual;
+    var randomCasSummer;
     var randomCasualOptTwo;
+    var randomRomance;
+    var randomRomanceOptTwo;
+    var randomConcert;
+    var randomConcertOptTwo;
+    
 
-
-    // need to add if val1 == val2 shuffle again
     function startestyle() {
       // get date and month
       var d = new Date();
       var n = d.getMonth();
 
-      // if (n >= 2){
-      //   randomWork = workWear[Math.floor(Math.random() * workWear.length)];
-      // } else{
-      //   randomWork = workSummer[Math.floor(Math.random() * workSummer.length)];
-      // }
-
+      // creating variables that are randomised values taken from arrays 
       randomWork = workWear[Math.floor(Math.random() * workWear.length)];
       randomWSummer = workSummer[Math.floor(Math.random() * workSummer.length)];
       randomWorkOptTwo = workWear[Math.floor(Math.random() * workWear.length)];
       randomCasual = casualWear[Math.floor(Math.random() * casualWear.length)];
+      randomCasSummer = casualSummer[Math.floor(Math.random() * casualSummer.length)];
       randomCasualOptTwo = casualWear[Math.floor(Math.random() * casualWear.length)];
+      randomRomance = romanceWear[Math.floor(Math.random() * romanceWear.length)];
+      randomRomanceOptTwo = romanceWear[Math.floor(Math.random() * romanceWear.length)];
+      randomConcert= concertWear[Math.floor(Math.random() * concertWear.length)];
+      randomConcertOptTwo = concertWear[Math.floor(Math.random() * concertWear.length)];
+
       getValue = userSelectedStyle.options[userSelectedStyle.selectedIndex].value;
       getSecondValue = userSelectedOccasion.options[userSelectedOccasion.selectedIndex].value;
 
@@ -125,6 +129,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
               
        }
+       else if (getValue ==='3' && getSecondValue === '8'&& n>=1 ){
+        document.getElementById("outfitOne").innerHTML = randomConcert;
+        document.getElementById("outfitTwo").innerHTML = randomConcertOptTwo;
+        document.getElementById("hereAreTheOutfits").innerHTML = introEstyle;
+        document.getElementById("orWording").innerHTML = or;
+        
+        }
+        else if (getValue ==='3' && getSecondValue === '5'&& n>=1 ){
+          document.getElementById("outfitOne").innerHTML = randomRomance;
+          document.getElementById("outfitTwo").innerHTML = randomRomanceOptTwo;
+          document.getElementById("hereAreTheOutfits").innerHTML = introEstyle;
+          document.getElementById("orWording").innerHTML = or;
+          
+          }
       //  ifno value is selected alert this message
       else if (getValue ==='' && getSecondValue === '' ){
         alert("Oops! You need to select an option!");
