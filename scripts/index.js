@@ -55,8 +55,12 @@ document.addEventListener('DOMContentLoaded', function() {
       
   // -------------OUTFIT GENERATE SECTION!!! --------------------------------
 
+
+
+
   // creating arrays of outfit choices
   let workWear = ['trousers and blouse','dress and heels','culottes and rollneck'];
+  let workSummer = ['slinky dress','shorts and tee','culottes and tee'];
   let casualWear =['jumper and jeans', 'tshirt and midi','wide leg and blazer'];
   let introEstyle = 'Here are the outfits we have generated for you!';
   let reshuffleHeading ="Don't like either? Thats ok! You can reshuffle!";
@@ -91,9 +95,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // need to add if val1 == val2 shuffle again
     function startestyle() {
+      // get date and month
+      var d = new Date();
+      var n = d.getMonth();
 
+      // if (n >= 2){
+      //   randomWork = workWear[Math.floor(Math.random() * workWear.length)];
+      // } else{
+      //   randomWork = workSummer[Math.floor(Math.random() * workSummer.length)];
+      // }
 
-     randomWork = workWear[Math.floor(Math.random() * workWear.length)];
+      randomWork = workWear[Math.floor(Math.random() * workWear.length)];
+      randomWSummer = workSummer[Math.floor(Math.random() * workSummer.length)];
       randomWorkOptTwo = workWear[Math.floor(Math.random() * workWear.length)];
       randomCasual = casualWear[Math.floor(Math.random() * casualWear.length)];
       randomCasualOptTwo = casualWear[Math.floor(Math.random() * casualWear.length)];
@@ -103,11 +116,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // displays introEstyle in document hereARe the outfits
         
       // reading if the user has selected X value, display var displayed in Y
-       if (getValue === '1'&& getSecondValue === '1'){
+       if (getValue === '1'&& getSecondValue === '1' &&  n <= 1){
         
          document.getElementById("outfitOne").innerHTML = randomWork;
          document.getElementById("outfitTwo").innerHTML = randomWorkOptTwo;
          document.getElementById("hereAreTheOutfits").innerHTML = introEstyle;
+         document.getElementById("orWording").innerHTML = or;
 
               
        }
@@ -116,6 +130,13 @@ document.addEventListener('DOMContentLoaded', function() {
         alert("Oops! You need to select an option!");
         
         }
+        else if (getValue ==='1' && getSecondValue === '1'&& n>=1 ){
+          document.getElementById("outfitOne").innerHTML = randomWSummer;
+          document.getElementById("outfitTwo").innerHTML = randomWorkOptTwo;
+          document.getElementById("hereAreTheOutfits").innerHTML = introEstyle;
+          document.getElementById("orWording").innerHTML = or;
+          
+          }
        else {
          document.getElementById("outfitOne").innerHTML =randomCasual;
          document.getElementById("outfitTwo").innerHTML =randomCasualOptTwo;
@@ -126,42 +147,12 @@ document.addEventListener('DOMContentLoaded', function() {
       
        document.getElementById("reShuffleText").innerHTML = reshuffleHeading;
        document.getElementById("reShuffleBtn").style.display = 'block';
-    }
-
-    function startestyleAgain() {
-      getValue = userSelectedStyle.options[userSelectedStyle.selectedIndex].value;
-      getSecondValue = userSelectedOccasion.options[userSelectedOccasion.selectedIndex].value;
-
-        // displays introEstyle in document hereARe the outfits
-        
-      // reading if the user has selected X value, display var displayed in Y
-       if (getValue === '1'&& getSecondValue === '1'){
-         document.getElementById("outfitOne").innerHTML = randomWork;
-         document.getElementById("outfitTwo").innerHTML = randomWorkOptTwo;
-         document.getElementById("hereAreTheOutfits").innerHTML = introEstyle;
-        
-       }
-
-      else if (getValue ==='' && getSecondValue === '' ){
-        alert("Oops! You need to select an option!");
-        
-        }
-       else {
-         document.getElementById("outfitOne").innerHTML =randomCasual;
-         document.getElementById("outfitTwo").innerHTML =randomCasualOptTwo;
-         document.getElementById("hereAreTheOutfits").innerHTML = introEstyle;
-       }
-      
-       document.getElementById("reShuffleText").innerHTML = reshuffleHeading;
-       document.getElementById("reShuffleBtn").style.display = 'block';
-
-
-       console.log(getValue,getSecondValue);
+       console.log(n)
     }
     
     // assign onclick handlers to the buttons
     document.getElementById('outfitGenerateBtn').addEventListener('click', startestyle );;
-    // need to reshuffle button to work
+    // reshuffle button runs event again if user unhappy with choices
     document.getElementById('reShuffleBtn').addEventListener('click', startestyle );;
    
 
