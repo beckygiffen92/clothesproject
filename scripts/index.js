@@ -64,9 +64,17 @@ document.addEventListener('DOMContentLoaded', function() {
   let casualWear =['jumper and jeans', 'tshirt and midi','wide leg and blazer'];
   let casualSummer = ['tee and midi skirt','midi dress','maxi dress'];
   let romanceWear = ['blouse and wide leg trousers','jeans and heels','midi dress'];
+  let romanceSummer = ['blouse and wide leg trousers','jeans and heels','midi dress'];
   let concertWear = ['rock tee and skinny jeans', 'band tee and midi skirt','black top and black jeans','dungarees, band tee and doc martens','rockabilly dress and bandana'];
+  let concertWearSummer = ['rock tee and skinny jeans', 'band tee and midi skirt','black top and black jeans','dungarees, band tee and doc martens','rockabilly dress and bandana'];
+  let yogaWear = ['crop top, vest and leggings', 'vest, crop top and shorts','crop sweat and leggings'];
+  let yogaSummer = ['crop top, vest and leggings', 'vest, crop top and shorts','crop sweat and leggings'];
+  let walking = ['coat, leggings and walking boots','woolly jumper, leggings and walking boots','longline cardigan, leggings and walking boots'];
+  let walkingSummer =['tshirt, leggings and walking boots','vest, cycling shorts and walking boots','hoody, shorts and trainers'];
+  let sportingEvent = ['dress layered with cardigan', 'midi dress and blazer', 'cami dress with longline coat and heels','wide leg trousers, blouse and heels', 'long sleeve maxi dress with overcoat'];
 
-
+  // need to finish this
+  let sportingSummer;
   let introEstyle = 'Here are the outfits we have generated for you!';
   let reshuffleHeading ="Don't like either? Thats ok! You can reshuffle!";
   let or ="OR";
@@ -93,8 +101,17 @@ document.addEventListener('DOMContentLoaded', function() {
     var randomCasualOptTwo;
     var randomRomance;
     var randomRomanceOptTwo;
+    var randomRomanceSummer;
     var randomConcert;
     var randomConcertOptTwo;
+    var randomConcertSummer;
+    var randomYoga;
+    var randomYogaOptTwo;
+    var randomYogaSummer;
+    var randomWalk;
+    var randomWalkOptTwo;
+    var randomWalkSummer;
+    var randomSportEvent;
     
 
     function startestyle() {
@@ -113,14 +130,22 @@ document.addEventListener('DOMContentLoaded', function() {
       randomRomanceOptTwo = romanceWear[Math.floor(Math.random() * romanceWear.length)];
       randomConcert= concertWear[Math.floor(Math.random() * concertWear.length)];
       randomConcertOptTwo = concertWear[Math.floor(Math.random() * concertWear.length)];
-
+      randomConcertSummer = concertWearSummer[Math.floor(Math.random() * concertWearSummer.length)];
+      randomYoga = yogaWear[Math.floor(Math.random() * yogaWear.length)];
+      randomYogaOptTwo = yogaWear[Math.floor(Math.random() * yogaWear.length)];
+      randomYogaSummer = yogaSummer[Math.floor(Math.random() * yogaSummer.length)];
+      randomWalk = walking[Math.floor(Math.random() * walking.length)];
+      randomWalkOptTwo = walking[Math.floor(Math.random() * walking.length)];
+      randomWalkSummer = walkingSummer[Math.floor(Math.random() * walkingSummer.length)];
+      randomSportEvent = sportingEvent[Math.floor(Math.random() * sportingEvent.length)];
+      randomSportEventOptTwo = sportingEvent[Math.floor(Math.random() * sportingEvent.length)];
       getValue = userSelectedStyle.options[userSelectedStyle.selectedIndex].value;
       getSecondValue = userSelectedOccasion.options[userSelectedOccasion.selectedIndex].value;
 
         // displays introEstyle in document hereARe the outfits
         
       // reading if the user has selected X value, display var displayed in Y
-       if (getValue === '1'&& getSecondValue === '1' &&  n <= 1){
+       if (getSecondValue === '1'||getSecondValue ==='3'){
         
          document.getElementById("outfitOne").innerHTML = randomWork;
          document.getElementById("outfitTwo").innerHTML = randomWorkOptTwo;
@@ -129,39 +154,58 @@ document.addEventListener('DOMContentLoaded', function() {
 
               
        }
-       else if (getValue ==='3' && getSecondValue === '8'&& n>=1 ){
+       else if (getValue >= '2' && getSecondValue === '2'&& n>1 ){
+        document.getElementById("outfitOne").innerHTML = randomCasual;
+        document.getElementById("outfitTwo").innerHTML = randomCasualOptTwo;
+        document.getElementById("hereAreTheOutfits").innerHTML = introEstyle;
+        document.getElementById("orWording").innerHTML = or;
+       }
+       else if (getValue >= '2'&& getSecondValue === '4'&& n>1 ){
+        document.getElementById("outfitOne").innerHTML = randomWalk;
+        document.getElementById("outfitTwo").innerHTML = randomWalkOptTwo;
+        document.getElementById("hereAreTheOutfits").innerHTML = introEstyle;
+        document.getElementById("orWording").innerHTML = or;
+       }
+       else if (getValue >= '2'&& getSecondValue === '8'&& n>1 ){
         document.getElementById("outfitOne").innerHTML = randomConcert;
         document.getElementById("outfitTwo").innerHTML = randomConcertOptTwo;
         document.getElementById("hereAreTheOutfits").innerHTML = introEstyle;
         document.getElementById("orWording").innerHTML = or;
         
         }
-        else if (getValue ==='3' && getSecondValue === '5'&& n>=1 ){
+        else if (getValue >= '2'&& getSecondValue === '5'|| getSecondValue ==='6'|| getSecondValue ==='7'&& n>=1 ){
           document.getElementById("outfitOne").innerHTML = randomRomance;
           document.getElementById("outfitTwo").innerHTML = randomRomanceOptTwo;
           document.getElementById("hereAreTheOutfits").innerHTML = introEstyle;
           document.getElementById("orWording").innerHTML = or;
           
           }
+          else if (getValue >= '2'&& getSecondValue === '8'&& n>1 ){
+            document.getElementById("outfitOne").innerHTML = randomConcert;
+            document.getElementById("outfitTwo").innerHTML = randomConcertOptTwo;
+            document.getElementById("hereAreTheOutfits").innerHTML = introEstyle;
+            document.getElementById("orWording").innerHTML = or;
+            }
+            else if (getValue >= '2'&& getSecondValue === '9'&& n>1 ){
+              document.getElementById("outfitOne").innerHTML = randomSportEvent;
+              document.getElementById("outfitTwo").innerHTML = randomSportEventOptTwo;
+              document.getElementById("hereAreTheOutfits").innerHTML = introEstyle;
+              document.getElementById("orWording").innerHTML = or;
+              
+              }
+              else if (getValue >= '2'&& getSecondValue === '10'&& n>1 ){
+                document.getElementById("outfitOne").innerHTML = randomYoga;
+                document.getElementById("outfitTwo").innerHTML = randomYogaOptTwo;
+                document.getElementById("hereAreTheOutfits").innerHTML = introEstyle;
+                document.getElementById("orWording").innerHTML = or;
+                
+                }
       //  ifno value is selected alert this message
       else if (getValue ==='' && getSecondValue === '' ){
         alert("Oops! You need to select an option!");
         
         }
-        else if (getValue ==='1' && getSecondValue === '1'&& n>=1 ){
-          document.getElementById("outfitOne").innerHTML = randomWSummer;
-          document.getElementById("outfitTwo").innerHTML = randomWorkOptTwo;
-          document.getElementById("hereAreTheOutfits").innerHTML = introEstyle;
-          document.getElementById("orWording").innerHTML = or;
-          
-          }
-       else {
-         document.getElementById("outfitOne").innerHTML =randomCasual;
-         document.getElementById("outfitTwo").innerHTML =randomCasualOptTwo;
-         document.getElementById("hereAreTheOutfits").innerHTML = introEstyle;
-         document.getElementById("orWording").innerHTML = or;
-         console.log(randomCasual);
-       }
+        console.log(getSecondValue);
       
        document.getElementById("reShuffleText").innerHTML = reshuffleHeading;
        document.getElementById("reShuffleBtn").style.display = 'block';
@@ -174,4 +218,4 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('reShuffleBtn').addEventListener('click', startestyle );;
    
 
-    
+    // need to streamline if statements
