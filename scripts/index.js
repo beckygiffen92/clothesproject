@@ -145,6 +145,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // displays introEstyle in document hereARe the outfits
         
       // reading if the user has selected X value, display var displayed in Y
+
+      // dowsnt seem to work if using or?
        if (getSecondValue === '1'||getSecondValue ==='3'){
         
          document.getElementById("outfitOne").innerHTML = randomWork;
