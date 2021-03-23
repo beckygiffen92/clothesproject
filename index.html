@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/msg3roq.css">
     <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
@@ -18,20 +19,20 @@
           <a href="#" class="brand-logo">eStyler</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li class="logged-out"style="display:none">
-                  <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
+                  <a href="#" class="modal-trigger" data-target="modal-signup">Sign up</a>
                 </li>
                 <li class="logged-out"style="display:none">
-                  <a href="#" class="grey-text modal-trigger" data-target="modal-signin">Sign in</a>
+                  <a href="#" class="modal-trigger" data-target="modal-signin">Sign in</a>
                 </li>
                 <li class="logged-in"style="display:none">
-                  <a href='#' class="grey-text modal-trigger" data-target="modal-onetoone">Personal Stylist</a>
+                  <a href='#' class="modal-trigger" data-target="modal-onetoone">Personal Stylist</a>
                 </li>
                 
                 <li class="both-in-out"style="display:none">
-                  <a href='#' class="grey-text modal-trigger" data-target="modal-colourpalettes">Colour Palettes</a>
+                  <a href='#' class="modal-trigger" data-target="modal-colourpalettes">Colour Palettes</a>
                 </li>
                   <li class="logged-in" style="display:none">
-                  <a href='#' class="grey-text modal-trigger" data-target="modal-members">Discount Codes</a>
+                  <a href='#' class="modal-trigger" data-target="modal-members">Discount Codes</a>
                 </li>
                 
                 <li class="logged-in"style="display:none">
@@ -110,6 +111,11 @@
       <div class="container"id="topImageContainer">
         <h1>TOP IMAGE HERE</h1>
       </div>
+      <div class="container"id="redWaveContainer">
+        <div class="row">
+        <img src="redwave-01.png"id="redWave">
+      </div>
+      </div>
 
       <!-- Card section -->
     
@@ -119,7 +125,8 @@
             <div class="row">
                 <div class="card col s12 m12 l3"id="firstCard">
                   <div class="card-title">
-                    <h3>Membership Perks</h3>
+                    <h3>How eStyler Works</h3>
+                    <img src="whitewave-01.png"id="whiteWave">
                   </div>
                   <div class="card-content">
                     <p>I am a very simple card. I am good at containing small bits of information.
@@ -131,7 +138,8 @@
              
                   <div class="card col s12 m12 l3"id="secondCard">
                     <div class="card-title">
-                      <h3>Membership Perks</h3>
+                      <h3>Our Mission</h3>
+                      <img src="whitewave-01.png"id="whiteWave">
                     </div>
                     <div class="card-content">
                       <p>I am a very simple card. I am good at containing small bits of information.
@@ -144,6 +152,7 @@
                     <div class="card col s12 m12 l3"id="thirdCard">
                       <div class="card-title">
                         <h3>Membership Perks</h3>
+                        <img src="whitewave-01.png"id="whiteWave">
                       </div>
                       <div class="card-content">
                         <p>I am a very simple card. I am good at containing small bits of information.
@@ -154,7 +163,11 @@
                   </div>
                   </div>
            
-         
+                  <div class="container"id="redWaveContainer">
+                      <div class="row">
+                      <img src="redwave-01.png"id="redWave">
+                    </div>
+                    </div>
         
 
           <!-- Middle image section -->
@@ -212,7 +225,11 @@
             <button type="submit" id ="reShuffleBtn">Reshuffle!</button>
           </div>
          
-          
+          <div class="container"id="redWaveContainer">
+              <div class="row">
+              <img src="redwave-01.png"id="redWave">
+            </div>
+            </div>
           
         
           

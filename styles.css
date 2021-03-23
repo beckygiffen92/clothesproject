@@ -1,10 +1,40 @@
+body{
+   
+font-family: 'futura-pt', sans-serif;
+
+font-weight: 500;
+
+font-style: normal;
+}
+nav{
+    background-color: #EE6055!important;
+}
 .navbar{
-    color: white;
+    
+    color: #FDFFFC;
     padding: 80px!important;
 }
-
+.modal-trigger:hover{
+    text-decoration: underline;
+    background-color: inherit;
+}
+#signout:hover{
+    text-decoration: underline;
+    background-color: inherit;  
+}
+#redWaveContainer{
+    padding: 20px;
+    text-align: center;
+}
+#redWave{
+    width: 10%;
+    text-align: center;
+}
 h1{
     font-size: 40px!important;
+}
+h3{
+    font-size: 24px!important;
 }
 a{
     font-size: 18px!important;
@@ -18,11 +48,20 @@ button{
     margin-right: 100px;
    
 }
+/* need to change width and height settings here and alignment*/
 #firstCard,#secondCard,#thirdCard{
     margin: 10px;
     padding: 10px;
     align-content: center;
+    height: 400px;
+    background-color: #EE6055;
+    color: #FDFFFC;
+    
+   
 }
 .card-title{
     text-align: center;
+}
+#whiteWave{
+    width: 30%;
 }
