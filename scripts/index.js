@@ -52,7 +52,10 @@ document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('select');
     var instances = M.FormSelect.init(elems, {});
   });
-      
+  // fade duration for when user scrolls
+  AOS.init({
+    duration: 1200,
+  })
   // -------------OUTFIT GENERATE SECTION!!! --------------------------------
 
 
