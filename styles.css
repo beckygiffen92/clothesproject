@@ -8,11 +8,19 @@ font-style: normal;
 }
 nav{
     background-color: #EE6055!important;
+    padding: 80px;
 }
 .navbar{
     
     color: #FDFFFC;
-    padding: 80px!important;
+    
+    
+}
+.brand-logo{
+    font-size: 60px!important;
+    /* padding: 50px; */
+    padding-bottom: 50px!important;
+    align-content: center!important;
 }
 .modal-trigger:hover{
     text-decoration: underline;
@@ -31,7 +39,7 @@ nav{
     text-align: center;
 }
 #topImageContainer{
-    margin-top: 20px;
+    margin-top: 180px;
     background-color: #F3D9DC;
     text-align: center;
     width: 80%;
