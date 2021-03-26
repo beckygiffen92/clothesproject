@@ -118,6 +118,15 @@ document.addEventListener('DOMContentLoaded', function() {
     
 
     function startestyle() {
+      // the outfits are displayed on click
+      var chosenOutfitOne=document.getElementById("outfitOne");
+      var chosenOutfitTwo=document.getElementById("outfitTwo");
+
+      chosenOutfitOne.style.display="block";
+      // chosenOutfitOne.classList.toggle('fade');
+      chosenOutfitTwo.style.display="block";
+     
+
       // get date and month
       var d = new Date();
       var n = d.getMonth();
@@ -153,6 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
        if (getSecondValue === '1'||getSecondValue ==='3'){
         
          document.getElementById("outfitOne").innerHTML = randomWork;
+        
          document.getElementById("outfitTwo").innerHTML = randomWorkOptTwo;
          document.getElementById("hereAreTheOutfits").innerHTML = introEstyle;
          document.getElementById("orWording").innerHTML = or;
@@ -161,6 +171,7 @@ document.addEventListener('DOMContentLoaded', function() {
        }
        else if (getValue >= '2' && getSecondValue === '2'&& n>1 ){
         document.getElementById("outfitOne").innerHTML = randomCasual;
+        
         document.getElementById("outfitTwo").innerHTML = randomCasualOptTwo;
         document.getElementById("hereAreTheOutfits").innerHTML = introEstyle;
         document.getElementById("orWording").innerHTML = or;

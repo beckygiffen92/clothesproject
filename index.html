@@ -109,8 +109,9 @@
            </div>
         </div>
       <!-- Top Image section -->
-      <div class="container"id="topImageContainer">
-        <h1>TOP IMAGE HERE</h1>
+      <div class="container"id="topImageContainer" data-aos="fade-up">
+        <img src="ladiesheadsdummieimg-01.png">
+      <h1>hello</h1>
       </div>
       <div class="container"id="redWaveContainer">
         <div class="row">
@@ -121,10 +122,10 @@
       <!-- Card section -->
     
       
-      
-        <div class="container"id="topCardsContainer">
+     
+        <div class="container col s12 m12 l12"id="topCardsContainer">
             <div class="row">
-                <div class="card col s12 m12 l3"id="firstCard">
+                <div class="card col s12 m12 l4"id="firstCard">
                   <div class="card-title">
                     <h3>How eStyler Works</h3>
                     <img src="whitewave-01.png"id="whiteWave">
@@ -137,7 +138,7 @@
                 </div>
             
              
-                  <div class="card col s12 m12 l3"id="secondCard">
+                  <div class="card col s12 m12 l4"id="secondCard">
                     <div class="card-title">
                       <h3>Our Mission</h3>
                       <img src="whitewave-01.png"id="whiteWave">
@@ -150,7 +151,7 @@
                   </div>
                 
                 
-                    <div class="card col s12 m12 l3"id="thirdCard">
+                    <div class="card col s12 m12 l4"id="thirdCard">
                       <div class="card-title">
                         <h3>Membership Perks</h3>
                         <img src="whitewave-01.png"id="whiteWave">
@@ -161,6 +162,7 @@
                       </div>
                      
                     </div>
+                    <!-- <div class="col s12 m12 l3"></div> -->
                   </div>
                   </div>
            
@@ -213,23 +215,30 @@
           </div>
 
           <!-- outfit generater section -->
+          
           <div class="container col 12"id="outfitGenerateContainer">
             <h3 id="hereAreTheOutfits"></h3>
-            <p id="outfitOne">
+            
                 
-
-            <!-- </p> -->
-            <h1 id="orWording"></h1>
-            <p id="outfitTwo">
-              <!-- need to work on this -->
-                
-                <!-- <div class="item" data-aos="fade-right"><p id="outfitOne"></p></div> -->
-                <!-- <div class="item" data-aos="fade-left"><p id="outfitTwo"></p></div> -->
-
-            </p>
+          </div>
+    
+         
+            
+           
+                  <!-- items which contains the outfits: set to hidden so that user can only see them when function runs   -->
+              <div class="row">
+                <div class="col s12 m12 l5">
+                <div class="item" style="display:none"id="outfitOne"></div>
+              </div>
+                <div class="col s12 m12 l2"id="orCont"><h1 id="orWording"></h1>
+                </div>
+                <div class="col s12 m12 l5">
+                <div class="item" style="display:none"id="outfitTwo"></div>
+              </div>
+            </div>
             <h3 id="reShuffleText"></h3>
             <button type="submit" id ="reShuffleBtn">Reshuffle!</button>
-          </div>
+          
          
           <div class="container"id="redWaveContainer">
               <div class="row">
@@ -252,8 +261,7 @@
             <div class="item" data-aos="flip-right">10</div>
             <div class="item" data-aos="flip-left">11</div>
           
-         
-    
+        
 <script>
     // Your web app's Firebase configuration
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional

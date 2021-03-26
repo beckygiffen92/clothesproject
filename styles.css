@@ -30,6 +30,13 @@ nav{
     width: 10%;
     text-align: center;
 }
+#topImageContainer{
+    margin-top: 20px;
+    background-color: #F3D9DC;
+    text-align: center;
+    width: 80%;
+    height: 600px;
+}
 h1{
     font-size: 40px!important;
 }
@@ -45,11 +52,12 @@ button{
 
 #topCardsContainer{
     align-items: center!important;
-    margin-right: 100px;
+    /* margin-right: 100px; */
    
 }
 /* need to change width and height settings here and alignment*/
 #firstCard,#secondCard,#thirdCard{
+   
     margin: 10px;
     padding: 10px;
     align-content: center;
@@ -59,6 +67,18 @@ button{
     
    
 }
+/* cardswill take up 100% of width if smaller than 991px wide */
+@media only screen and (max-width: 991px) {
+    #firstCard,#secondCard,#thirdCard {
+      width: 100%;
+    }
+  }
+  /* cardswill take up 30% of width if atleast 992px wide */
+@media only screen and (min-width: 992px) {
+    #firstCard,#secondCard,#thirdCard {
+      width: 30%;
+    }
+  }
 .card-title{
     text-align: center;
 }
@@ -72,12 +92,52 @@ button{
   }
   
   .item {
-    width: 200px;
-    height: 200px;
-    margin: 50px auto;
-    padding-top: 75px;
-    background: #ccc;
+      /* float: left; */
+   
+    width: 80%;
+    height: 600px;
+    margin: 0 auto;
+    
+    padding: 20px;
+    background: #EE6055;
     text-align: center;
-    color: #FFF;
+    align-content: center!important;
+    color: #FDFFFC;
     font-size: 12px;
+  }
+
+  #outfitOne{
+     float: right;
+    display:none;
+  
+    position: relative;
+    left: -400px;
+    animation: slide 0.4sforwards;
+    -webkit-animation: slide 0.4s forwards;
+    
+  }
+  #outfitTwo{
+    float: left;
+    display:none;
+    
+    position: relative;
+    right: -400px;
+    animation: slide 0.4sforwards;
+    -webkit-animation: slide 0.4s forwards;
+  }
+  @-webkit-keyframes slide {
+    100% {
+      left: 0;
+      right: 0;
+    }
+  }
+  @keyframes slide {
+    100% {
+      left: 0;
+      right: 0;
+    }
+  }
+  #orCont{
+     
+      text-align: center;
   }
