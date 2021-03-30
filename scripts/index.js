@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
               
        }
-       else if (getValue >= '2' && getSecondValue === '2'&& n>1 ){
+       else if (getValue == '2' && getSecondValue === '2'&& n>1  || getValue =='3' && getSecondValue === '2'&& n>1  ){
         document.getElementById("outfitOne").innerHTML = randomCasual;
         
         document.getElementById("outfitTwo").innerHTML = randomCasualOptTwo;

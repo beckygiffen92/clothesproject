@@ -73,7 +73,7 @@ button{
    
 }
 /* need to change width and height settings here and alignment*/
-#firstCard,#secondCard,#thirdCard{
+#secondCard{
    
     margin: 10px;
     padding: 10px;
@@ -83,6 +83,26 @@ button{
     color: #FDFFFC;
     
    
+}
+#firstCard{
+  margin: 10px;
+  margin-left: 20px;
+  padding: 10px;
+  align-content: center;
+  height: 400px;
+  background-color: #EE6055;
+  color: #FDFFFC;
+  
+}
+#thirdCard{
+ 
+  margin: 10px;
+  margin-right: 0px;
+  padding: 10px;
+  align-content: center;
+  height: 400px;
+  background-color: #EE6055;
+  color: #FDFFFC;
 }
 /* cardswill take up 100% of width if smaller than 991px wide */
 @media only screen and (max-width: 991px) {
