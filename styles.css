@@ -68,14 +68,29 @@ button{
 }
 
 #topCardsContainer{
+  align-content: center!important;
     align-items: center!important;
+    text-align: center!important;
+    margin: 10px;
+    padding: 20px;
+    
+    
+    /* padding: 0px!important;
+    top: 50%;
+    left: 50%;
+    right: 50%; */
     /* margin-right: 100px; */
    
 }
+
 /* need to change width and height settings here and alignment*/
-#secondCard{
-   
+.row{
+  margin-right: 15px!important;
+}
+/* #secondCard{
+  
     margin: 10px;
+    
     padding: 10px;
     align-content: center;
     height: 400px;
@@ -86,7 +101,7 @@ button{
 }
 #firstCard{
   margin: 10px;
-  margin-left: 20px;
+ 
   padding: 10px;
   align-content: center;
   height: 400px;
@@ -96,12 +111,48 @@ button{
 }
 #thirdCard{
  
-  margin: 10px;
-  margin-right: 0px;
-  padding: 10px;
-  align-content: center;
+  
+
   height: 400px;
   background-color: #EE6055;
+  color: #FDFFFC;
+} */
+.container{
+  width: 100%!important;
+  text-align: center;
+  
+ 
+}
+.flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+ 
+  margin: 10px;
+  margin-left: 30px!important;
+  
+}
+.card{
+  height: 400px;
+  justify-content: center;
+  align-items: center;
+  background-color: #EE6055!important;
+  color: #FDFFFC;
+  width: 25%!important;
+  margin: 10px!important;
+  padding: 20px!important;
+}
+#cardOne,#cardTwo,#cardThree{
+  margin: auto!important;
+  text-align: center!important;
+
+  width:28%!important;
+  padding: 20px;
+ margin-left:10px!important;
+ margin-right: 10px!important;
+  height: 400px;
+  background-color: #EE6055!important;
   color: #FDFFFC;
 }
 /* cardswill take up 100% of width if smaller than 991px wide */
