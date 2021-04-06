@@ -38,7 +38,7 @@ nav{
     width: 10%;
     text-align: center;
 }
-#topImageContainer{
+#topImageContainer,#midImageContainer{
     margin-top: 100px;
     
     background-color: #F3D9DC;
@@ -47,13 +47,7 @@ nav{
     height: 600px;
 }
 
-#midImageContainer{
-    margin-top: 50px;
-    background-color: #F3D9DC;
-    text-align: center;
-    width: 80%;
-    height: 600px;
-}
+
 h1{
     font-size: 40px!important;
 }
