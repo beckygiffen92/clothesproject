@@ -290,7 +290,7 @@
                         </div>
                       </div>
                     <div id="instafeed-container">
-
+                      <!-- <a href="{{link}}"><img title="{{caption}}" src="{{image}}" /></a> -->
                     </div>
 
            
@@ -313,10 +313,35 @@
             var userFeed = new Instafeed({
               get: 'user',
               target: "instafeed-container",
-                resolution: 'high_resolution',
-              accessToken: 'IGQVJYUkNTM2VmRmVVWXEteXZApSnI1STNqd25qbVlETmx6WEVWaVpId09lc0Jxb1Uyd2RNOGZAXMjV0al96NDFXOVVpSjVCZAkgxQ2wtcWNPcVZANYXNQMzZAlSzZApMXJpQjZAhUzZA2MXp6SGVoWUpydnk5NwZDZD'
-            });
+                resolution: 'standard_resolution',
+                limit: 8,
+                link: 'true',
+                caption: 'true',
+                sortBy: 'most-recent',
+              accessToken: 'IGQVJYUkNTM2VmRmVVWXEteXZApSnI1STNqd25qbVlETmx6WEVWaVpId09lc0Jxb1Uyd2RNOGZAXMjV0al96NDFXOVVpSjVCZAkgxQ2wtcWNPcVZANYXNQMzZAlSzZApMXJpQjZAhUzZA2MXp6SGVoWUpydnk5NwZDZD',
+              
+            
+            filter: function(image) {
+                var MAX_LENGTH = 60;
+
+                // here we create a property called "short_caption"
+                // on the image object, using the original caption
+                if (image.caption && image.caption.text) {
+                  image.short_caption = image.caption.text.slice(0, MAX_LENGTH); //displays characters of the captions 0 to 30
+
+                } else {
+                  image.short_caption = "";
+                }
+
+                // ensure the filter doesn't reject any images
+                return true;
+              },
+  template:  '<div class="wrap"><img src="{{image}}"/><div class="caption">{{caption}}</div></div>'
+
+});
             userFeed.run();
+
+            
             </script>
         
 <script>
@@ -350,7 +375,7 @@
  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  
+    <script src="scripts/instafeed.js"></script>
     <script src="scripts/index.js"></script>
     <script src="scripts/auth.js"></script>
 
