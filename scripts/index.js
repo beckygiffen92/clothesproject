@@ -1,4 +1,4 @@
-const firestore = firebase.firestore();
+// const db = firebase.firestore();
 const discountList = document.querySelector('#discount-list')
 
 //variables for nav bar logged in or out
@@ -60,21 +60,27 @@ document.addEventListener('DOMContentLoaded', function() {
   })
   // -------------OUTFIT GENERATE SECTION!!! --------------------------------
 
-  document.addEventListener('DOMContentLoaded', function(){
-    // const firestore = firebase.firestore();
-    firestore.settings({timestampsInSnapshots: true});
-    const colWork = firestore.collection('workwear');
-    // const colCas = firestore.collection('casualwear');
-    // const colConc = firestore.collection('concertwear');
-    // const colRom = firestore.collection('romancewear');
+  // document.addEventListener('DOMContentLoaded', function(){
+  //   // const firestore = firebase.firestore();
+  //   firestore.settings({timestampsInSnapshots: true});
+  //   const colWork = firestore.collection('workwear');
+  //   // const colCas = firestore.collection('casualwear');
+  //   // const colConc = firestore.collection('concertwear');
+  //   // const colRom = firestore.collection('romancewear');
 
-    const query = colWork.where('top','array-contains', 'blouse')
-    query.get().then(snapshot =>{
-      snapshot.docs.forEach(doc=>{
-        console.log(doc.id, doc.data())
-      })
-    })
-  });
+  //   const query = colWork.where('top','array-contains', 'blouse')
+  //   query.get().then(snapshot =>{
+  //     snapshot.docs.forEach(doc=>{
+  //       console.log(doc.id, doc.data())
+  //     })
+  //   })
+  // });
+
+  // db.collection('casualwear').get().then((snapshot)=>{
+  //   snapshots.docs.forEach(doc =>{
+  //     console.log(doc.data);
+  //   })
+  // })
 
 
 

@@ -252,25 +252,49 @@
           
             <div class="row">
             
-            <div class="container"id="instagramContainer">
+            <div class="flexbox">
               <div class = "card col s12 m12 l3 "id="instaPhoto">
                 1
               </div>
              
-              <div class = "card col s12 m12 l3"id="instaPhotoTwo">
+              <div class = "card col s12 m12 l3"id="instaPhoto">
                   3
                 </div>
-                <div class = "card col s12 m12 l3"id="instaPhotoThree">
+                <div class = "card col s12 m12 l3"id="instaPhoto">
                     1
                   </div>
                  
-                  <div class = "card col s12 m12 l3"id="instaPhotoFour">
+                  <div class = "card col s12 m12 l3"id="instaPhoto">
                       3
                     </div>
+                  </div>
+                </div>
                 
+                <div class="row">
+            
+                  <div class="flexbox">
+                    <div class = "card col s12 m12 l3 "id="instaPhoto">
+                      1
+                    </div>
+                   
+                    <div class = "card col s12 m12 l3"id="instaPhoto">
+                        3
+                      </div>
+                      <div class = "card col s12 m12 l3"id="instaPhoto">
+                          1
+                        </div>
+                       
+                        <div class = "card col s12 m12 l3"id="instaPhoto">
+                            3
+                          </div>
+                        </div>
+                      </div>
+                    <div id="instafeed-container">
 
-            </div>
-          </div>
+                    </div>
+
+           
+         
             <!-- <div class="item" data-aos="fade-up">1</div>
             <div class="item" data-aos="fade-down">2</div>
             
@@ -284,7 +308,16 @@
             <div class="item" data-aos="flip-down">9</div>
             <div class="item" data-aos="flip-right">10</div>
             <div class="item" data-aos="flip-left">11</div> -->
-          
+            <script src="https://cdn.jsdelivr.net/gh/stevenschobert/instafeed.js@2.0.0rc1/src/instafeed.min.js"></script>
+            <script type="text/javascript">
+            var userFeed = new Instafeed({
+              get: 'user',
+              target: "instafeed-container",
+                resolution: 'high_resolution',
+              accessToken: 'IGQVJYUkNTM2VmRmVVWXEteXZApSnI1STNqd25qbVlETmx6WEVWaVpId09lc0Jxb1Uyd2RNOGZAXMjV0al96NDFXOVVpSjVCZAkgxQ2wtcWNPcVZANYXNQMzZAlSzZApMXJpQjZAhUzZA2MXp6SGVoWUpydnk5NwZDZD'
+            });
+            userFeed.run();
+            </script>
         
 <script>
     // Your web app's Firebase configuration
@@ -310,6 +343,9 @@
 
     //update firestore settings - need this if using firestore 5 and above otherwise will throw errors
   db.settings({ timestampsInSnapshots: true})
+
+
+
   </script> 
  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
