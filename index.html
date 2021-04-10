@@ -289,10 +289,11 @@
                           </div>
                         </div>
                       </div>
+                      <div class="row">
                     <div id="instafeed-container">
                       <!-- <a href="{{link}}"><img title="{{caption}}" src="{{image}}" /></a> -->
                     </div>
-
+                  </div>
            
          
             <!-- <div class="item" data-aos="fade-up">1</div>
@@ -336,7 +337,7 @@
                 // ensure the filter doesn't reject any images
                 return true;
               },
-  template:  '<div class="wrap"><img src="{{image}}"/><div class="caption">{{caption}}</div></div>'
+  template:  '<div class="wrap col 3"><img src="{{image}}"/><div class="caption">{{caption}}</div></div>'
 
 });
             userFeed.run();

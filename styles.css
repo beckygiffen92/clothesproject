@@ -247,9 +247,17 @@ button{
   
     
   }
-  #instafeed-container title{
-  color: #EE6055!important;
+  #instafeed-container{
+    margin: 10px!important;
+    padding: 10px!important;
+    height: 200px!important;
   }
-  #instafeed-container image{
+  #instafeed-container img{
+    border-color: #F3D9DC!important;
+    width: 100%!important;
+  }
+  .wrap{
     width: 25%!important;
+    max-height: 20px!important;
+
   }
