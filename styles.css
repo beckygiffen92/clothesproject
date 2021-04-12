@@ -22,14 +22,48 @@ nav{
     padding-bottom: 50px!important;
     align-content: center!important;
 }
+.modal{
+  
+  background-color: #F3D9DC!important;
+  width: 50%!important;
+  height: 600px!important;
+}
 .modal-trigger:hover{
     text-decoration: underline;
     background-color: inherit;
 }
-
-#instaLogo{
+.modal-content{
+  background-color: #F3D9DC;
+  text-align: center;
+  width: 100%;
+}
+.modal-content img{
   width: 10%!important;
 }
+/* .dropdown-trigger{
+  background-color: inherit!important;
+  text-transform: none!important;
+  border: none!important;
+  box-shadow: none!important;
+}
+.dropdown:hover{
+text-decoration: underline!important;
+}
+.btn{
+  text-decoration: none!important;
+  text-transform: inherit;
+}
+.dropdown-content{
+  height: 80px;
+  background-color: #EE6055;
+}
+.dropdown-content li{
+  background-color: #EE6055;
+}
+.dropdown-content li img{
+  width: 30%!important;
+} */
+
 #signout:hover{
     text-decoration: underline;
     background-color: inherit;  
@@ -84,6 +118,7 @@ button{
 /* need to change width and height settings here and alignment*/
 .row{
   margin-right: 15px!important;
+  margin-bottom: 0!important;
 }
 /* #secondCard{
   

@@ -258,3 +258,10 @@ document.addEventListener('DOMContentLoaded', function() {
    
 
     // need to streamline if statements
+
+    
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.dropdown-trigger');
+    var instances = M.Dropdown.init(elems, {});
+  });
+  
