@@ -26,6 +26,10 @@ nav{
     text-decoration: underline;
     background-color: inherit;
 }
+
+#instaLogo{
+  width: 10%!important;
+}
 #signout:hover{
     text-decoration: underline;
     background-color: inherit;  
@@ -154,7 +158,7 @@ button{
     #firstCard,#secondCard,#thirdCard {
       width: 100%;
     }
-    #instaPhoto,#instaPhotoTwo,#instaPhotoThree,#instaPhotoFour{
+    #instaPhoto{
         width: 100%;
     }
   }
@@ -226,21 +230,14 @@ button{
      
       text-align: center;
   }
-#instagramContainer{
-    
-    text-align: center;
-    width: 100%!important;
-    justify-content: center;
-  align-items: center;
 
-}
   #instaPhoto{
       
-    height: 300px;
+    /* height: 300px; */
   justify-content: center;
   align-items: center;
   background-color: #F3D9DC!important;
-  color: #FDFFFC;
+  color: black;
   width: 20%!important;
   margin: 10px!important;
   /* padding: 20px!important; */
@@ -248,16 +245,34 @@ button{
     
   }
   #instafeed-container{
-    margin: 10px!important;
+    /* margin: 10px!important;
     padding: 10px!important;
     height: 200px!important;
+    justify-content: center!important;
+    flex-wrap: wrap!important;
+    text-align: center!important; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+   
+    margin: 5px;
+    margin-left: 30px!important;
   }
   #instafeed-container img{
+    
     border-color: #F3D9DC!important;
     width: 100%!important;
   }
-  .wrap{
-    width: 25%!important;
-    max-height: 20px!important;
+ .wrap{
+    justify-content: center!important;
+    /* text-align: left!important; */
+    padding: 20px!important;
+    margin: 5px!important;
+    margin-right: auto!important;
+    display: inline-block!important;
+    background-color: #F3D9DC!important;
+    width: 20%!important;
+    /* max-height: 20px!important; */
 
   }

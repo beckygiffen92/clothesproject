@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://use.typekit.net/msg3roq.css">
+    
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-auth.js"></script>
@@ -35,7 +36,9 @@
                   <li class="logged-in" style="display:none">
                   <a href='#' class="modal-trigger" data-target="modal-members">Discount Codes</a>
                 </li>
-                
+                <li class="both-in-out" style="display:none">
+                  <a href='#' class="modal-trigger" data-target="modal-socials">Follow Us</a>
+                </li>
                 <li class="logged-in"style="display:none">
                   <a href="#"id="signout">Sign Out</a>
                 </li>
@@ -106,6 +109,14 @@
                 <ul></ul>
                 <ul></ul>
               </div>
+           </div>
+        </div>
+        <div id="modal-socials"class="modal">
+          <div class="modal-content">
+            <div class="row">
+            <h1>instagram</h1>
+           <a href="http://instagram.com/estyler_outfit"><img src="instagramestyler-01.png"id="instaLogo"></a>
+          </div>
            </div>
         </div>
       <!-- Top Image section -->
@@ -252,43 +263,13 @@
           
             <div class="row">
             
-            <div class="flexbox">
-              <div class = "card col s12 m12 l3 "id="instaPhoto">
-                1
-              </div>
-             
-              <div class = "card col s12 m12 l3"id="instaPhoto">
-                  3
-                </div>
-                <div class = "card col s12 m12 l3"id="instaPhoto">
-                    1
-                  </div>
-                 
-                  <div class = "card col s12 m12 l3"id="instaPhoto">
-                      3
-                    </div>
+            <div class="container">
+              <h1>eStyler Queens listen up!</h1>
+              <h3>When you upload your ootd on instagram curated for you by eStyler, be sure to use our hashtag #eStylerQueen on your outfits to be featured on our page!</h3>
                   </div>
                 </div>
                 
-                <div class="row">
-            
-                  <div class="flexbox">
-                    <div class = "card col s12 m12 l3 "id="instaPhoto">
-                      1
-                    </div>
-                   
-                    <div class = "card col s12 m12 l3"id="instaPhoto">
-                        3
-                      </div>
-                      <div class = "card col s12 m12 l3"id="instaPhoto">
-                          1
-                        </div>
-                       
-                        <div class = "card col s12 m12 l3"id="instaPhoto">
-                            3
-                          </div>
-                        </div>
-                      </div>
+                
                       <div class="row">
                     <div id="instafeed-container">
                       <!-- <a href="{{link}}"><img title="{{caption}}" src="{{image}}" /></a> -->
@@ -337,7 +318,7 @@
                 // ensure the filter doesn't reject any images
                 return true;
               },
-  template:  '<div class="wrap col 3"><img src="{{image}}"/><div class="caption">{{caption}}</div></div>'
+  template:  '<div class="card col s12 m12 l3"id="instaPhoto"><img src="{{image}}"/><div class="caption">{{caption}}</div></div>'
 
 });
             userFeed.run();
