@@ -1,5 +1,6 @@
 // const db = firebase.firestore();
 const discountList = document.querySelector('#discount-list')
+const outfitGenerator = document.querySelector('#outfit-generate');
 
 //variables for nav bar logged in or out
 const loggedOutLinks = document.querySelectorAll('.logged-out');
@@ -38,7 +39,31 @@ const setUpMembersDisc =(data) =>{        //putting data inside the array
 
   discountList.innerHTML = html;
 }else {       //this message appears if user clicjs discount codes but not logged in
-  discountList.innerHTML = '<h5 class="center-align">Oops! Only members can see these discount codes! Log in or Sign up</h5>'
+  discountList.innerHTML = '<h5 class="center-align">no outfits</h5>'
+}}
+
+
+const userOutfit =(data) =>{        //putting data inside the array
+  //setting up if the user is logged in the discountlist array has length, then we can see it; 
+  if (data.length){
+  let html = '';
+  data.forEach(doc =>{          //foreach document in the discountlist
+    const concertwear = doc.data();    //going through the array vv creating an li with h2 and p for each store and discountcode
+    const li = `
+
+      <li>  
+      <h2>${concertwear.top}</h2>
+      <p>${concertwear.bottom}</p>
+      <p>${concertwear.outer}</p>
+      <p>${concertwear.shoes}</p>
+      </li>
+    `;             //`` output data inside curly strings
+    html += li;
+  })
+
+  outfitGenerator.innerHTML = html;
+}else {       //this message appears if user clicjs discount codes but not logged in
+  outfitGeneratort.innerHTML = '<h5 class="center-align">Oops! Only members can see these discount codes! Log in or Sign up</h5>'
 }}
 // setup materialize components
 document.addEventListener('DOMContentLoaded', function() {
@@ -75,17 +100,24 @@ document.addEventListener('DOMContentLoaded', function() {
   //     })
   //   })
   // });
+  
+  // let workWear = db.collection('outfits').where("keywords","array-contains","work");
+  // console.log('workWear');
 
-  // db.collection('casualwear').get().then((snapshot)=>{
+  // db.collection('workwear').('workwear1').get().then((snapshot)=>{
   //   snapshots.docs.forEach(doc =>{
-  //     console.log(doc.data);
+  //   var top = snapshot.get("top");
+  //   var bottom = snapshot.get("bottom");
+  //   var shoes = snapshot.get("shoes");
+  //   var outer = snapshot.get("outer");
+  //     console.log(workwear1)
   //   })
   // })
 
 
 
   // creating arrays of outfit choices
-  let workWear = ['trousers and blouse','dress and heels','culottes and rollneck'];
+  // let workWear = ['trousers and blouse','dress and heels','culottes and rollneck'];
   let workSummer = ['slinky dress','shorts and blouse','culottes and tee'];
   let casualWear =['jumper and jeans', 'tshirt and midi','wide leg and blazer'];
   let casualSummer = ['tee and midi skirt','midi dress','maxi dress'];
@@ -117,6 +149,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // NEED TO WORK ON THIS
+
+
+ 
     var getValue;
     var getSecondValue;
     var randomWork;

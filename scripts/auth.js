@@ -15,6 +15,21 @@ db.collection('discounts').get().then(snapshot =>{
     }
 });
 
+auth.onAuthStateChanged(user =>{        //looking for changes in the user - whether logged in or out
+    if (user){
+        //get data
+db.collection('concertwear').get().then(snapshot =>{
+    userOutfit(snapshot.docs);            //retrieve data and settung it up inside setupmemberdisc
+    
+})
+    }
+    else{
+       userOutfit(snapshot.docs);    //empty array if not logged in
+        console.log('running');
+         //willshow navbar logged out classes
+    }
+});
+
 //signup - creating a variable that finds the id name of #signupForm
 const signUpForm = document.querySelector('#signupForm');
 
