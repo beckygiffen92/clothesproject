@@ -99,7 +99,7 @@ button{
     font-size: 18px!important;
 }
 #ladiesOutfitsImage{
-  width: 30%;
+  width: 60%;
 }
 #topCardsContainer{
   align-content: center!important;
@@ -196,14 +196,23 @@ button{
       width: 100%;
     }
     #instaPhoto{
-        width: 100%;
+        width: 100%!important;
     }
+    #ladiesOutfitsImage{
+      width: 45%;
+    }
+    #topImageContainer,#midImageContainer{
+     height: 200px;
+  }
   }
   /* cardswill take up 30% of width if atleast 992px wide */
 @media only screen and (min-width: 992px) {
     #firstCard,#secondCard,#thirdCard {
       width: 30%;
     }
+    #instaPhoto{
+      width: 20%!important;
+  }
   }
 .card-title{
     text-align: center;
@@ -275,7 +284,7 @@ button{
   align-items: center;
   background-color: #F3D9DC!important;
   color: black;
-  width: 20%!important;
+  /* width: 20%!important; */
   margin: 10px!important;
   /* padding: 20px!important; */
   
