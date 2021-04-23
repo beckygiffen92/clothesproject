@@ -114,8 +114,8 @@ document.addEventListener('DOMContentLoaded', function() {
   //   })
   // })
 
-  let outfitsWork= db.collection('outfits').where('keywords','array-contains-any','work');
-    outfitsWork.get();
+  // let outfitsWork= db.collection('outfits').where('keywords','array-contains-any','work');
+  //   outfitsWork.get();
     // .then((querySnapshot) => {
     //     querySnapshot.forEach((doc) => {
     //         // doc.data() is never undefined for query doc snapshots
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   // creating arrays of outfit choices
-  // let workWear = ['trousers and blouse','dress and heels','culottes and rollneck'];
+  let workWear = ['trousers and blouse','dress and heels','culottes and rollneck'];
   let workSummer = ['slinky dress','shorts and blouse','culottes and tee'];
   let casualWear =['jumper and jeans', 'tshirt and midi','wide leg and blazer'];
   let casualSummer = ['tee and midi skirt','midi dress','maxi dress'];
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // gets the value that the user selected
   
-    document.getElementById("reShuffleBtn").style.display = 'none';
+  document.getElementById("reShuffleBtn").style.visibility= 'none';
 
 
 // NEED TO WORK ON THIS
@@ -190,6 +190,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // the outfits are displayed on click
       var chosenOutfitOne=document.getElementById("outfitOne");
       var chosenOutfitTwo=document.getElementById("outfitTwo");
+      
 
       chosenOutfitOne.style.display="block";
       // chosenOutfitOne.classList.toggle('fade');
@@ -201,11 +202,11 @@ document.addEventListener('DOMContentLoaded', function() {
       var n = d.getMonth();
 
       // creating variables that are randomised values taken from arrays 
-       randomWork = outfitsWork[Math.floor(Math.random() * outfitsWork.length)];
-      // randomWork = workWear[Math.floor(Math.random() * workWear.length)];
+      //  randomWork = outfitsWork[Math.floor(Math.random() * outfitsWork.length)];
+      randomWork = workWear[Math.floor(Math.random() * workWear.length)];
       randomWSummer = workSummer[Math.floor(Math.random() * workSummer.length)];
-      // randomWorkOptTwo = workWear[Math.floor(Math.random() * workWear.length)];
-      randomWorkOptTwo = outfitsWork[Math.floor(Math.random() * outfitsWork.length)];
+      randomWorkOptTwo = workWear[Math.floor(Math.random() * workWear.length)];
+      // randomWorkOptTwo = outfitsWork[Math.floor(Math.random() * outfitsWork.length)];
       randomCasual = casualWear[Math.floor(Math.random() * casualWear.length)];
       randomCasSummer = casualSummer[Math.floor(Math.random() * casualSummer.length)];
       randomCasualOptTwo = casualWear[Math.floor(Math.random() * casualWear.length)];
