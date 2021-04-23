@@ -1,6 +1,6 @@
 // const db = firebase.firestore();
 const discountList = document.querySelector('#discount-list')
-const outfitGenerator = document.querySelector('#outfit-generate');
+// const outfitGenerator = document.querySelector('#outfit-generate');
 
 //variables for nav bar logged in or out
 const loggedOutLinks = document.querySelectorAll('.logged-out');
@@ -43,28 +43,28 @@ const setUpMembersDisc =(data) =>{        //putting data inside the array
 }}
 
 
-const userOutfit =(data) =>{        //putting data inside the array
-  //setting up if the user is logged in the discountlist array has length, then we can see it; 
-  if (data.length){
-  let html = '';
-  data.forEach(doc =>{          //foreach document in the discountlist
-    const concertwear = doc.data();    //going through the array vv creating an li with h2 and p for each store and discountcode
-    const li = `
+// const userOutfit =(data) =>{        //putting data inside the array
+//   //setting up if the user is logged in the discountlist array has length, then we can see it; 
+//   if (data.length){
+//   let html = '';
+//   data.forEach(doc =>{          //foreach document in the discountlist
+//     const concertwear = doc.data();    //going through the array vv creating an li with h2 and p for each store and discountcode
+//     const li = `
 
-      <li>  
-      <h2>${concertwear.top}</h2>
-      <p>${concertwear.bottom}</p>
-      <p>${concertwear.outer}</p>
-      <p>${concertwear.shoes}</p>
-      </li>
-    `;             //`` output data inside curly strings
-    html += li;
-  })
+//       <li>  
+//       <h2>${concertwear.top}</h2>
+//       <p>${concertwear.bottom}</p>
+//       <p>${concertwear.outer}</p>
+//       <p>${concertwear.shoes}</p>
+//       </li>
+//     `;             //`` output data inside curly strings
+//     html += li;
+//   })
 
-  outfitGenerator.innerHTML = html;
-}else {       //this message appears if user clicjs discount codes but not logged in
-  outfitGeneratort.innerHTML = '<h5 class="center-align">Oops! Only members can see these discount codes! Log in or Sign up</h5>'
-}}
+//   outfitGenerator.innerHTML = html;
+// }else {       //this message appears if user clicjs discount codes but not logged in
+//   outfitGeneratort.innerHTML = '<h5 class="center-align">Oops! Only members can see these discount codes! Log in or Sign up</h5>'
+// }}
 // setup materialize components
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -114,6 +114,17 @@ document.addEventListener('DOMContentLoaded', function() {
   //   })
   // })
 
+  let outfitsWork= db.collection('outfits').where('keywords','array-contains-any','work');
+    outfitsWork.get();
+    // .then((querySnapshot) => {
+    //     querySnapshot.forEach((doc) => {
+    //         // doc.data() is never undefined for query doc snapshots
+    //         console.log(doc.id, " => ", doc.data());
+    //     });
+    // })
+    // .catch((error) => {
+    //     console.log("Error getting documents: ", error);
+    // });
 
 
   // creating arrays of outfit choices
@@ -190,9 +201,11 @@ document.addEventListener('DOMContentLoaded', function() {
       var n = d.getMonth();
 
       // creating variables that are randomised values taken from arrays 
-      randomWork = workWear[Math.floor(Math.random() * workWear.length)];
+       randomWork = outfitsWork[Math.floor(Math.random() * outfitsWork.length)];
+      // randomWork = workWear[Math.floor(Math.random() * workWear.length)];
       randomWSummer = workSummer[Math.floor(Math.random() * workSummer.length)];
-      randomWorkOptTwo = workWear[Math.floor(Math.random() * workWear.length)];
+      // randomWorkOptTwo = workWear[Math.floor(Math.random() * workWear.length)];
+      randomWorkOptTwo = outfitsWork[Math.floor(Math.random() * outfitsWork.length)];
       randomCasual = casualWear[Math.floor(Math.random() * casualWear.length)];
       randomCasSummer = casualSummer[Math.floor(Math.random() * casualSummer.length)];
       randomCasualOptTwo = casualWear[Math.floor(Math.random() * casualWear.length)];

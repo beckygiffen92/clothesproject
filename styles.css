@@ -98,7 +98,9 @@ a{
 button{
     font-size: 18px!important;
 }
-
+#ladiesOutfitsImage{
+  width: 30%;
+}
 #topCardsContainer{
   align-content: center!important;
     align-items: center!important;
