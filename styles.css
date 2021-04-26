@@ -77,6 +77,7 @@ text-decoration: underline!important;
     text-align: center;
 }
 #topImageContainer,#midImageContainer{
+  /* need to change this v v v */
     margin-top: 100px;
     
     background-color: #F3D9DC;
@@ -98,8 +99,8 @@ a{
 button{
     font-size: 18px!important;
 }
-#ladiesOutfitsImage{
-  width: 60%;
+#ladiesOutfitsImage,#ladiesOutfitsImageTwo{
+  width: 40%;
 }
 #topCardsContainer{
   align-content: center!important;
@@ -178,31 +179,21 @@ button{
   margin: 10px!important;
   padding: 20px!important;
 }
-#cardOne,#cardTwo,#cardThree{
-  margin: auto!important;
-  text-align: center!important;
 
-  width:28%!important;
-  padding: 20px;
- margin-left:10px!important;
- margin-right: 10px!important;
-  height: 400px;
-  background-color: #EE6055!important;
-  color: #FDFFFC;
-}
 /* cardswill take up 100% of width if smaller than 991px wide */
 @media only screen and (max-width: 991px) {
-    #firstCard,#secondCard,#thirdCard {
-      width: 100%;
+    .card{
+      width: 100%!important;
     }
     #instaPhoto{
         width: 100%!important;
     }
-    #ladiesOutfitsImage{
-      width: 45%;
+    #ladiesOutfitsImage,#ladiesOutfitsImageTwo{
+      width: 30%;
     }
     #topImageContainer,#midImageContainer{
      height: 200px;
+     width: 80%!important;
   }
   }
   /* cardswill take up 30% of width if atleast 992px wide */
