@@ -161,8 +161,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // NEED TO WORK ON THIS
 
-
- 
+  // dbcollection (outfits).workwear = randomWork
+  
     var getValue;
     var getSecondValue;
     var randomWork;
@@ -313,4 +313,53 @@ document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.dropdown-trigger');
     var instances = M.Dropdown.init(elems, {});
   });
+  
+
+
+
+
+     
+  
+      var container = document.querySelector('#container');
+
+      function createElement(doc){
+          let h1 = document.createElement('h1');
+          let img = document.createElement('img');
+
+          img.setAttribute('src', doc.data().imageurl);
+          img.setAttribute('alt', doc.data().imagedesc);
+          h1.textContent = doc.data().name;
+
+          container.appendChild(h1);
+          container.appendChild(img);
+      }
+
+      // var selection = document.querySelector('#outfitSelector');
+      
+      // db.collection('outfits').get().then(snapshot => {
+      //         snapshot.docs.forEach(doc => {
+      //             console.log(doc.data())
+      //             createElement(doc);
+      //         });
+      //     });
+
+      //https://firebase.google.com/docs/firestore/query-data/queries
+
+      var btn = document.querySelector('#btnExample');
+      var categories = ['work1', 'work2', 'work3'];
+
+      btn.addEventListener("click", (e)=>{
+          container.innerHTML = "";
+          
+          var work= categories[Math.floor(Math.random()*categories.length)];
+          
+          db.collection('outfits').where('occasionoption', 'array-contains', categories).get().then(snapshot => {
+              snapshot.docs.forEach(doc => {
+                  console.log(doc.data())
+                  createElement(doc);
+              });
+          });
+      });
+
+      
   
