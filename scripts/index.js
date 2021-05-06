@@ -345,21 +345,84 @@ document.addEventListener('DOMContentLoaded', function() {
 
       //https://firebase.google.com/docs/firestore/query-data/queries
 
-      var btn = document.querySelector('#btnExample');
-      var categories = ['work1', 'work2', 'work3'];
+      var displayWorkTest;
+      var displayCasualTest;
 
-      btn.addEventListener("click", (e)=>{
-          container.innerHTML = "";
+      var btn = document.getElementById('outfitSelector').addEventListener('click', testing );;
+
+      // var btn = document.querySelector('#outfitSelector');
+      // var work = ['work1', 'work2', 'work3'];
+
+    //  displayWorkTest = btn.addEventListener("click", (e)=>{
+    //       container.innerHTML = "";
           
-          var work= categories[Math.floor(Math.random()*categories.length)];
+    //       var option = work[Math.floor(Math.random()*work.length)];
           
-          db.collection('outfits').where('occasionoption', 'array-contains', categories).get().then(snapshot => {
-              snapshot.docs.forEach(doc => {
-                  console.log(doc.data())
-                  createElement(doc);
-              });
-          });
-      });
+    //       db.collection('outfits').where('occasionoption', 'array-contains', 'work').get().then(snapshot => {
+    //           snapshot.docs.forEach(doc => {
+    //               console.log(doc.data())
+    //               createElement(doc);
+    //           });
+    //       });
+    //   });
+
+    //   displayCasualTest = btn.addEventListener("click", (e)=>{
+    //     container.innerHTML = "";
+        
+    //     var option = work[Math.floor(Math.random()*work.length)];
+        
+    //     db.collection('outfits').where('occasionoption', 'array-contains', 'casual').get().then(snapshot => {
+    //         snapshot.docs.forEach(doc => {
+    //             console.log(doc.data())
+    //             createElement(doc);
+    //         });
+    //     });
+    // });
 
       
+      // create a function when casual is selected
+      // display db collection outfits where array contains casual
   
+
+      // reading user selection from the testing select
+
+      const userSelectTest = document.getElementById('testingSelect');
+      var getTestSelect;
+      
+     
+      function testing(){
+       
+      
+        getTestSelect = userSelectTest.options[userSelectTest.selectedIndex].value;
+
+    
+
+      if (getTestSelect === 'casual' ) {
+  
+        // container.innerHTML = "";
+        
+        // var option = work[Math.floor(Math.random()*work.length)];
+        
+        db.collection('outfits').where('occasionoption', 'array-contains', 'casual').get().then(snapshot => {
+            snapshot.docs.forEach(doc => {
+                console.log(doc.data())
+                createElement(doc);
+            });
+        });
+  
+
+      }
+      else {
+        
+        db.collection('outfits').where('occasionoption', 'array-contains', 'work').get().then(snapshot => {
+          snapshot.docs.forEach(doc => {
+              console.log(doc.data())
+              createElement(doc);
+          });
+      });
+  };
+
+
+
+      }
+    
