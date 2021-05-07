@@ -394,11 +394,11 @@ document.addEventListener('DOMContentLoaded', function() {
      
       function testing(){
        
-      
+      // gettestselect is created from the value the user has selected from the userselecttest selection
         getTestSelect = userSelectTest.options[userSelectTest.selectedIndex].value;
 
     
-
+      // if user selects casual from the options; the db collection looks for an array that contains casual under occasionoption then displays this in createelement
       if (getTestSelect === 'casual' ) {
         container.innerHTML ="";
   
@@ -418,6 +418,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
 
       }
+       // if user selects work from the options; the db collection looks for an array that contains work under occasionoption then displays this in createelement
       else if(getTestSelect === 'work'){
         container.innerHTML ="";
         db.collection('outfits').where('occasionoption', 'array-contains', 'work').get().then(snapshot => {
@@ -429,11 +430,74 @@ document.addEventListener('DOMContentLoaded', function() {
               createElement(doc);
           });
       });
-  } else{
+  } 
+  else if(getTestSelect === 'romance'){
+    container.innerHTML ="";
+    db.collection('outfits').where('occasionoption', 'array-contains', 'romance').get().then(snapshot => {
+     
+      
+      snapshot.docs.forEach(doc => {
+          console.log(doc.data())
+         
+          createElement(doc);
+      });
+  });
+} 
+else if(getTestSelect === 'walk'){
+  container.innerHTML ="";
+  db.collection('outfits').where('occasionoption', 'array-contains', 'walk').get().then(snapshot => {
+   
+    
+    snapshot.docs.forEach(doc => {
+        console.log(doc.data())
+       
+        createElement(doc);
+    });
+});
+} 
+else if(getTestSelect === 'yoga'){
+  container.innerHTML ="";
+  db.collection('outfits').where('occasionoption', 'array-contains', 'yoga').get().then(snapshot => {
+   
+    
+    snapshot.docs.forEach(doc => {
+        console.log(doc.data())
+       
+        createElement(doc);
+    });
+});
+} 
+else if(getTestSelect === 'concert'){
+  container.innerHTML ="";
+  db.collection('outfits').where('occasionoption', 'array-contains', 'concert').get().then(snapshot => {
+   
+    
+    snapshot.docs.forEach(doc => {
+        console.log(doc.data())
+       
+        createElement(doc);
+    });
+});
+} 
+else if(getTestSelect === 'sport'){
+  container.innerHTML ="";
+  db.collection('outfits').where('occasionoption', 'array-contains', 'sport').get().then(snapshot => {
+   
+    
+    snapshot.docs.forEach(doc => {
+        console.log(doc.data())
+       
+        createElement(doc);
+    });
+});
+} 
+else{
+     // if user selects romance from the options; the db collection looks for an array that contains romance under occasionoption then displays this in createelement
+    container.innerHTML ="";
     db.collection('outfits').where('occasionoption', 'array-contains', 'romance').get().then(snapshot => {
       snapshot.docs.forEach(doc => {
           console.log(doc.data())
-          container.innerHTML ="";
+          
           createElement(doc);
       });
   });

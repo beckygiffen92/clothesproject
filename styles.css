@@ -252,6 +252,21 @@ button{
     font-size: 12px;
   }
 
+  /* #outfitViewer h1{
+
+    float: right;
+    color: black;
+    display:none;
+  
+    position: relative;
+    left: -400px;
+    animation: slide 0.4sforwards;
+    -webkit-animation: slide 0.4s forwards;
+  } */
+  
+  #outfitViewer img{
+    width: 30%!important;
+  }
   #outfitOne{
      float: right;
     display:none;
