@@ -320,15 +320,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
      
   
-      var container = document.querySelector('#container');
+      var container = document.querySelector('#outfitViewer');
 
       function createElement(doc){
+
+          // container.innerHTML="";
           let h1 = document.createElement('h1');
           let img = document.createElement('img');
 
           img.setAttribute('src', doc.data().imageurl);
           img.setAttribute('alt', doc.data().imagedesc);
-          h1.textContent = doc.data().name;
+          h1.textContent = doc.data().imagedesc;
 
           container.appendChild(h1);
           container.appendChild(img);
@@ -398,28 +400,43 @@ document.addEventListener('DOMContentLoaded', function() {
     
 
       if (getTestSelect === 'casual' ) {
+        container.innerHTML ="";
   
         // container.innerHTML = "";
         
         // var option = work[Math.floor(Math.random()*work.length)];
         
         db.collection('outfits').where('occasionoption', 'array-contains', 'casual').get().then(snapshot => {
+
+         
             snapshot.docs.forEach(doc => {
                 console.log(doc.data())
+               
                 createElement(doc);
             });
         });
   
 
       }
-      else {
-        
+      else if(getTestSelect === 'work'){
+        container.innerHTML ="";
         db.collection('outfits').where('occasionoption', 'array-contains', 'work').get().then(snapshot => {
+         
+          
           snapshot.docs.forEach(doc => {
               console.log(doc.data())
+             
               createElement(doc);
           });
       });
+  } else{
+    db.collection('outfits').where('occasionoption', 'array-contains', 'romance').get().then(snapshot => {
+      snapshot.docs.forEach(doc => {
+          console.log(doc.data())
+          container.innerHTML ="";
+          createElement(doc);
+      });
+  });
   };
 
 
