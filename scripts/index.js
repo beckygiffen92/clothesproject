@@ -326,14 +326,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
           // container.innerHTML="";
           let h1 = document.createElement('h1');
+          let h3 = document.createElement('h3');
           let img = document.createElement('img');
 
           img.setAttribute('src', doc.data().imageurl);
           img.setAttribute('alt', doc.data().imagedesc);
+          // h3.setAttribute('value', doc.data().tip);
+          // img.setAttribute('alt', doc.data().imagetip);
           h1.textContent = doc.data().imagedesc;
+          h3.textContent= doc.data().tip;
 
           container.appendChild(h1);
           container.appendChild(img);
+          container.appendChild(h3);
       }
 
       // var selection = document.querySelector('#outfitSelector');
