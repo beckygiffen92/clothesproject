@@ -303,7 +303,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // assign onclick handlers to the buttons
     //  document.getElementById('outfitGenerateBtn').addEventListener('click', startestyle );;
     // reshuffle button runs event again if user unhappy with choices
-    // document.getElementById('reShuffleBtn').addEventListener('click', startestyle );;
+    document.getElementById('reShuffleBtn').addEventListener('click', testing );;
    
 
     // need to streamline if statements
@@ -324,10 +324,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
       function createElement(doc){
 
+
           // container.innerHTML="";
           let h1 = document.createElement('h1');
           let h3 = document.createElement('h3');
           let img = document.createElement('img');
+          let reText = document.createElement('p');
+          let reShuf = document.createElement('btn');
         
 
           img.setAttribute('src', doc.data().imageurl);
@@ -336,10 +339,21 @@ document.addEventListener('DOMContentLoaded', function() {
           // img.setAttribute('alt', doc.data().imagetip);
           h1.textContent = doc.data().imagedesc;
           h3.textContent= doc.data().tip;
+          reText.textContent='Dont like either? Thats fine! You can reshuffle!';
+          reShuf.btn = 'Reshuffle';
+          
+          // document.getElementById("reShuffleText").innerHTML = reshuffleHeading;
+          // document.getElementById("reShuffleBtn").style.display = 'block';
 
           container.appendChild(h1);
           container.appendChild(img);
           container.appendChild(h3);
+          container.appendChild(reText);
+          container.appendChild(reShuf);
+          document.getElementById('reShuffleBtn').addEventListener('click', testing );;
+
+          // document.getElementById("hereAreTheOutfits").innerHTML = introEstyle;
+          //       document.getElementById("orWording").innerHTML = or;
       }
 
       // var selection = document.querySelector('#outfitSelector');
@@ -510,7 +524,8 @@ else if (getTestSelect ==='' && getStyleSelect === '' ){
   
   };
 
-
+  // document.getElementById("reShuffleText").innerHTML = reshuffleHeading;
+  document.getElementById("reShuffleBtn").style.display = 'block';
 
       }
     
