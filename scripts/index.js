@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
 
     // get references to select list and display text box
-    const userSelectedStyle = document.getElementById('selectStyle');
+    // const userSelectedStyle = document.getElementById('selectStyle');
     const userSelectedOccasion = document.getElementById('selectOccasion');
 
   // gets the value that the user selected
@@ -301,9 +301,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // assign onclick handlers to the buttons
-    document.getElementById('outfitGenerateBtn').addEventListener('click', startestyle );;
+    //  document.getElementById('outfitGenerateBtn').addEventListener('click', startestyle );;
     // reshuffle button runs event again if user unhappy with choices
-    document.getElementById('reShuffleBtn').addEventListener('click', startestyle );;
+    // document.getElementById('reShuffleBtn').addEventListener('click', startestyle );;
    
 
     // need to streamline if statements
@@ -328,6 +328,7 @@ document.addEventListener('DOMContentLoaded', function() {
           let h1 = document.createElement('h1');
           let h3 = document.createElement('h3');
           let img = document.createElement('img');
+        
 
           img.setAttribute('src', doc.data().imageurl);
           img.setAttribute('alt', doc.data().imagedesc);
@@ -394,23 +395,29 @@ document.addEventListener('DOMContentLoaded', function() {
       // reading user selection from the testing select
 
       const userSelectTest = document.getElementById('testingSelect');
+      const userSelectedStyle = document.getElementById('selectStyle');
       var getTestSelect;
-      
+      var getStyleSelect;
      
       function testing(){
        
       // gettestselect is created from the value the user has selected from the userselecttest selection
+         getStyleSelect = userSelectedStyle.options[userSelectedStyle.selectedIndex].value;
         getTestSelect = userSelectTest.options[userSelectTest.selectedIndex].value;
+       console.log(getStyleSelect);
 
     
       // if user selects casual from the options; the db collection looks for an array that contains casual under occasionoption then displays this in createelement
-      if (getTestSelect === 'casual' ) {
+      if ( getTestSelect === 'casual' && getStyleSelect === 'both') {
         container.innerHTML ="";
   
         // container.innerHTML = "";
+        // add ['casual','trouser'] and skirt to each one
         
         // var option = work[Math.floor(Math.random()*work.length)];
         
+        // array-contains-any ['casual','skirt'] 
+        // array contains casual
         db.collection('outfits').where('occasionoption', 'array-contains', 'casual').get().then(snapshot => {
 
          
@@ -423,8 +430,9 @@ document.addEventListener('DOMContentLoaded', function() {
   
 
       }
+      
        // if user selects work from the options; the db collection looks for an array that contains work under occasionoption then displays this in createelement
-      else if(getTestSelect === 'work'){
+      else if(getTestSelect === 'work' && getStyleSelect === 'both'){
         container.innerHTML ="";
         db.collection('outfits').where('occasionoption', 'array-contains', 'work').get().then(snapshot => {
          
@@ -436,7 +444,8 @@ document.addEventListener('DOMContentLoaded', function() {
           });
       });
   } 
-  else if(getTestSelect === 'romance'){
+
+  else if(getTestSelect === 'romance' && getStyleSelect === 'both'){
     container.innerHTML ="";
     db.collection('outfits').where('occasionoption', 'array-contains', 'romance').get().then(snapshot => {
      
@@ -448,7 +457,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   });
 } 
-else if(getTestSelect === 'walk'){
+else if(getTestSelect === 'walk' && getStyleSelect ==='both'){
   container.innerHTML ="";
   db.collection('outfits').where('occasionoption', 'array-contains', 'walk').get().then(snapshot => {
    
@@ -460,7 +469,7 @@ else if(getTestSelect === 'walk'){
     });
 });
 } 
-else if(getTestSelect === 'yoga'){
+else if(getTestSelect === 'yoga' && getStyleSelect ==='both'){
   container.innerHTML ="";
   db.collection('outfits').where('occasionoption', 'array-contains', 'yoga').get().then(snapshot => {
    
@@ -472,7 +481,7 @@ else if(getTestSelect === 'yoga'){
     });
 });
 } 
-else if(getTestSelect === 'concert'){
+else if(getTestSelect === 'concert' && getStyleSelect ==="both"){
   container.innerHTML ="";
   db.collection('outfits').where('occasionoption', 'array-contains', 'concert').get().then(snapshot => {
    
@@ -484,7 +493,7 @@ else if(getTestSelect === 'concert'){
     });
 });
 } 
-else if(getTestSelect === 'sport'){
+else if(getTestSelect === 'sport' && getStyleSelect ==='both'){
   container.innerHTML ="";
   db.collection('outfits').where('occasionoption', 'array-contains', 'sport').get().then(snapshot => {
    
@@ -495,17 +504,10 @@ else if(getTestSelect === 'sport'){
         createElement(doc);
     });
 });
-} 
-else{
-     // if user selects romance from the options; the db collection looks for an array that contains romance under occasionoption then displays this in createelement
-    container.innerHTML ="";
-    db.collection('outfits').where('occasionoption', 'array-contains', 'romance').get().then(snapshot => {
-      snapshot.docs.forEach(doc => {
-          console.log(doc.data())
-          
-          createElement(doc);
-      });
-  });
+}
+else if (getTestSelect ==='' && getStyleSelect === '' ){
+  alert("Oops! You need to select an option!");
+  
   };
 
 
