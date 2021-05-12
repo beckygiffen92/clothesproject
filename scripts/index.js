@@ -296,7 +296,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log(getSecondValue);
       
        document.getElementById("reShuffleText").innerHTML = reshuffleHeading;
-       document.getElementById("reShuffleBtn").style.display = 'block';
+      //  document.getElementById("reShuffleBtn").style.display = 'block';
        console.log(n)
     }
     
@@ -322,6 +322,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
       var container = document.querySelector('#outfitViewer');
 
+      // document.getElementById("reShuffleBtn").style.visibility= 'none';
       function createElement(doc){
 
 
@@ -344,13 +345,14 @@ document.addEventListener('DOMContentLoaded', function() {
           
           // document.getElementById("reShuffleText").innerHTML = reshuffleHeading;
           // document.getElementById("reShuffleBtn").style.display = 'block';
+          // document.getElementById("reShuffleBtn").style.display = 'block';
 
           container.appendChild(h1);
           container.appendChild(img);
           container.appendChild(h3);
           container.appendChild(reText);
           container.appendChild(reShuf);
-          document.getElementById('reShuffleBtn').addEventListener('click', testing );;
+      
 
           // document.getElementById("hereAreTheOutfits").innerHTML = introEstyle;
           //       document.getElementById("orWording").innerHTML = or;
@@ -371,7 +373,7 @@ document.addEventListener('DOMContentLoaded', function() {
       var displayCasualTest;
 
       var btn = document.getElementById('outfitSelector').addEventListener('click', testing );;
-
+      document.getElementById('reShuffleBtn').addEventListener('click', testing );;
       // var btn = document.querySelector('#outfitSelector');
       // var work = ['work1', 'work2', 'work3'];
 
@@ -414,17 +416,18 @@ document.addEventListener('DOMContentLoaded', function() {
       var getStyleSelect;
      
       function testing(){
-       
+        
       // gettestselect is created from the value the user has selected from the userselecttest selection
          getStyleSelect = userSelectedStyle.options[userSelectedStyle.selectedIndex].value;
         getTestSelect = userSelectTest.options[userSelectTest.selectedIndex].value;
        console.log(getStyleSelect);
+       
 
     
       // if user selects casual from the options; the db collection looks for an array that contains casual under occasionoption then displays this in createelement
       if ( getTestSelect === 'casual' && getStyleSelect === 'both') {
         container.innerHTML ="";
-  
+        document.getElementById("reShuffleBtn").style.display = 'block';
         // container.innerHTML = "";
         // add ['casual','trouser'] and skirt to each one
         
@@ -440,6 +443,7 @@ document.addEventListener('DOMContentLoaded', function() {
                
                 createElement(doc);
             });
+            
         });
   
 
@@ -525,7 +529,8 @@ else if (getTestSelect ==='' && getStyleSelect === '' ){
   };
 
   // document.getElementById("reShuffleText").innerHTML = reshuffleHeading;
-  document.getElementById("reShuffleBtn").style.display = 'block';
+  // document.getElementById("reShuffleBtn").style.display = 'block';
+  document.getElementById("buttonAppear").innerHTML = '<button onclick="testing()">Reshuffle</button>';
 
       }
     
