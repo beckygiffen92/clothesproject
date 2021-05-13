@@ -157,8 +157,7 @@
                     <img src="whitewave-01.png"id="whiteWave">
                   </div>
                   <div class="card-content">
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
+                    <p>eStyler finds the ultimate outfit for you based on your style preferences and your occasion!</p>
                   </div>
                  
                 </div>
@@ -170,8 +169,7 @@
                       <img src="whitewave-01.png"id="whiteWave">
                     </div>
                     <div class="card-content">
-                      <p>I am a very simple card. I am good at containing small bits of information.
-                      I am convenient because I require little markup to use effectively.</p>
+                      <p>We aim to inspire you to recycle and rewear your clothes! We promote sustainable fashion.</p>
                     </div>
                     
                   </div>
@@ -183,8 +181,7 @@
                         <img src="whitewave-01.png"id="whiteWave">
                       </div>
                       <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively.</p>
+                        <p>Become a member NOW for exclusive discount codes for our favourite sustainable fashion brands!</p>
                       </div>
                      
                     </div>
@@ -331,13 +328,15 @@
                 resolution: 'standard_resolution',
                 limit: 3,
                 link: 'true',
-                caption: 'true',
+                caption: 'false',
                 sortBy: 'most-recent',
               accessToken: 'IGQVJYUkNTM2VmRmVVWXEteXZApSnI1STNqd25qbVlETmx6WEVWaVpId09lc0Jxb1Uyd2RNOGZAXMjV0al96NDFXOVVpSjVCZAkgxQ2wtcWNPcVZANYXNQMzZAlSzZApMXJpQjZAhUzZA2MXp6SGVoWUpydnk5NwZDZD',
               
             
             filter: function(image) {
-                var MAX_LENGTH = 30;
+                var MAX_LENGTH = 15;
+
+                
 
                 // here we create a property called "short_caption"
                 // on the image object, using the original caption
@@ -351,7 +350,7 @@
                 // ensure the filter doesn't reject any images
                 return true;
               },
-  template:  '<div class="card col s12 m12 l4"id="instaPhoto"><img src="{{image}}"id="instaImage"/><div class="caption"id="instaCaption">{{caption}}</div></div>'
+  template:  '<div class="card col s12 m12 l4 overflow: hidden"id="instaPhoto"><img src="{{image}}"class="img-fluid"id="instaImage"/><div class="caption"id="instaCaption">{{caption}}</div></div>'
 
 });
             userFeed.run();
