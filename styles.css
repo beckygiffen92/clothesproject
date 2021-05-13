@@ -169,6 +169,29 @@ button{
   margin-left: 30px!important;
   
 }
+#instafeed-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+ 
+  margin: 10px;
+  margin-left: 30px!important;
+}
+#instafeed-container .card{
+  height: 400px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #F3D9DC!important;
+  color: #FDFFFC;
+  width: 25%!important;
+  margin: 10px!important;
+  padding: 20px!important;
+}
+#instafeed-container img{
+  max-width: 80%;
+}
 .card{
   height: 400px;
   justify-content: center;
@@ -185,14 +208,6 @@ button{
     .card{
       width: 100%!important;
     }
-    #instaPhoto{
-        width: 90%!important;
-    }
-
-    #instafeed-container img{
-    
-      width: 90%!important;
-    }
     
     #ladiesOutfitsImage,#ladiesOutfitsImageTwo{
       width: 30%;
@@ -201,28 +216,62 @@ button{
      height: 200px;
      width: 80%!important;
   }
+  
+
   }
-  @media only screen and (min-width: 500px) {
-    #instafeed-container img{
-    
-      width: 80%!important;
-    }
+  @media only screen and (min-width: 425px) {
+    #instafeed-container .card{
+      width: 100%!important;
+      }
+      #instafeed-container img{
+        max-width:70%;
+      }
+  
+  }
+  @media only screen and (min-width: 320px){
+    #instafeed-container .card{
+      width: 100%!important;
+      }
+      #instafeed-container img{
+        max-width:100%;
+      }
+  
+  }
+  @media only screen and (min-width: 525px) {
+    #instafeed-container .card{
+      width: 100%!important;
+      }
+      #instafeed-container img{
+       max-width:60%;
+      }
+      #instaCaption{
+        font-size: 12px;
+      }
+  }
+  
+  @media only screen and (min-width: 769px) {
+    #instafeed-container .card{
+      width: 25%!important;
+      }
+      #instafeed-container img{
+       max-width:100%;
+      }
+      #instaCaption{
+        font-size: 12px;
+      }
   }
   /* cardswill take up 30% of width if atleast 992px wide */
+ 
 @media only screen and (min-width: 992px) {
     #firstCard,#secondCard,#thirdCard {
       width: 30%;
     }
-    #instaPhoto{
-      width: 20%!important;
-  }
-  #instaImage{
-    width: 100%!important;
-  }
-  #instafeed-container img{
-    
-    width: 100%!important;
-  }
+    #instafeed-container .card{
+      width: 25%!important;
+      }
+      #instafeed-container img{
+        max-width: 90%;
+      }
   }
 .card-title{
     text-align: center;
@@ -252,20 +301,32 @@ button{
     font-size: 12px;
   }
 
-  /* #outfitViewer h1{
-
-    float: right;
-    color: black;
-    display:none;
   
-    position: relative;
-    left: -400px;
-    animation: slide 0.4sforwards;
-    -webkit-animation: slide 0.4s forwards;
-  } */
-  
+  #outfitViewer{
+    justify-content: center!important;
+    /* text-align: left!important; */
+    padding: 20px!important;
+    margin: 10px!important;
+    margin-right: auto!important;
+    display: inline-block!important;
+    /* background-color: #F3D9DC!important; */
+    width: 100%!important;
+  }
   #outfitViewer img{
-    width: 30%!important;
+    border: 50px solid #EE6055;
+    width: 50%!important;
+   
+    /* display: flex;
+    flex-wrap: wrap; */
+    
+  }
+  #outfitViewer h1{
+    font-size: 40px!important;
+    
+  }
+  #outfitViewer h3{
+    font-size: 20px!important;
+    
   }
   #outfitOne{
      float: right;
@@ -303,40 +364,8 @@ button{
       text-align: center;
   }
 
-  #instaPhoto{
-      
-    /* height: 300px; */
-  justify-content: center;
-  align-items: center;
-  background-color: #F3D9DC!important;
-  color: black;
-  /* width: 20%!important; */
-  margin: 10px!important;
-  padding: 20px!important;
-  /* padding: 20px!important; */
-  
-    
-  }
-  #instafeed-container{
-    /* margin: 10px!important;
-    padding: 10px!important;
-    height: 200px!important;
-    justify-content: center!important;
-    flex-wrap: wrap!important;
-    text-align: center!important; */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-   text-align: center;
-    margin: 5px;
-    margin-left: 20px!important;
-  }
-  #instafeed-container img{
-    
-    border-color: #F3D9DC!important;
-    
-  }
+
+
  .wrap{
     justify-content: center!important;
     /* text-align: left!important; */
@@ -345,7 +374,7 @@ button{
     margin-right: auto!important;
     display: inline-block!important;
     background-color: #F3D9DC!important;
-    width: 20%!important;
+    width: 100%!important;
     /* max-height: 20px!important; */
 
   }

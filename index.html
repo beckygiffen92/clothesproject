@@ -210,54 +210,60 @@
 
           <!-- outfit generate section -->
           <!-- need to edit this bit -->
-          <div class="container col s12" id="estyleGenerateSection">
-            
-            <h1>eStyle Me!</h1><br>
-            <!-- <h2>Are you more a dresses and skirts girl or a trousers and jumpsuits girl?</h2>
-            <div class="input-field">
-              <select id ="selectStyle">
-                <option value="" disabled selected>Choose your option</option>
-                <option value="1"id="styleDress">Dresses and skirts</option>
-                <option value="2"id="styleTrousers">Trousers and jumpsuits</option>
-                <option value="3"id="styleBoth">A  bit of both</option>
-              </select>
-              <label>1. Select your style</label>
-            </div> -->
-            <!-- <h2>What event have you got planned for today that you need an outfit for?</h2>
-            <div class="input-field">
-              <select id="selectOccasion">
-                <option value="" disabled selected>Choose your option</option>
-                <option value="1"id="occasionWorking">Unfortunately working to pay the bills!</option>
-                <option value="2"id="occasionMeetingFriend">Meeting a friend for coffee</option>
-                <option value="3"id="occasionInterview">A job interview</option>
-                <option value="4"id="occasionWalking">Going for a long walk</option>
-                <option value="5"id="occasionDateCurrent">Having a date night with a current partner</option>
-                <option value="6"id="occasionDateNew">Having a date night with a potential partner</option>
-                <option value="7"id="occasionDrinks">Drinks with some friends</option>
-                <option value="8"id="occasionConcert">Going to a concert</option>
-                <option value="9"id="occasionSportEvent">Going to a sporting event</option>
-                <option value="10"id="occasionYoga">Yoga/Working out</option>
-              </select>
-              <label>2. Select your event</label>
-            </div>
-
-            <label>3. Press button to find an outfit!</label></br>
-            <button type="submit"id="outfitGenerateBtn">Find outfit!</button>
-          </div>
-
-         
-           -->
-            
           
-          <!-- outfit generater section -->
-          
-          <!-- <div class="container col 12"id="outfitGenerateContainer">
-            <h3 id="hereAreTheOutfits"></h3>
-            
+          <div class="container"id="container">
                 
           </div>
-     -->
-         
+          <h1>eStyle Me!</h1><br>
+          <h2>Are you more a dresses and skirts girl or a trousers and jumpsuits girl?</h2>
+          <div class="input-field">
+            <select id ="selectStyle">
+              <option value="" disabled selected>Choose your option</option>
+              <option value="skirt">Dresses and skirts</option>
+              <option value="trousers">Trousers and jumpsuits</option>
+              <option value="both">A  bit of both</option>
+            </select>
+            <label>1. Select your style</label>
+          </div>
+
+              <h2>What event have you got planned for today that you need an outfit for?</h2>
+              
+                  <div class="input-field">
+                  <select id ="testingSelect">
+                     
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="casual">Meeting a friend for coffee</option>
+                    <option value ="work">Unfortunately working to pay the bills!</option>
+                    <option value ="work">A job interview</option>
+                    <option value ="romance">Having a date with a current partner</option>
+                    <option value ="romance">Having a date with a potential partner</option>
+                    <option value ="romance">Drinks with some friends</option>
+                    <option value="walk">Going for a walk</option>
+                    <option value = "yoga">Yoga/Working out</option>
+                    <option value="concert">Going to a concert</option>
+                    <option value="sport"disabled>Going to a sporting event</option>
+                
+                  </select>
+                  <label>2. Select your event</label>
+                 
+    
+                </div>
+                <button id="outfitSelector">click</button><br>
+                
+                <!-- <button style="display:none" id ="reShuffleBtn">Reshuffle!</button></div> -->
+                
+                <div class="row">
+                <div class="container col s12 m12 l12"id="outfitViewer">
+               
+                
+
+                </div>
+              </div>
+              <span id="buttonAppear"></span>
+          <div class="container col s12" id="estyleGenerateSection">
+            
+            
+      
             
            
                   <!-- items which contains the outfits: set to hidden so that user can only see them when function runs   -->
@@ -292,67 +298,11 @@
                
                 
                       <div class="row">
-                    <div id="instafeed-container">
+                    <div class= "flexbox"id="instafeed-container">
                       <!-- <a href="{{link}}"><img title="{{caption}}" src="{{image}}" /></a> -->
                     </div>
                   </div>
-                  <div class="container"id="container">
-                
-              </div>
-              <h2>Are you more a dresses and skirts girl or a trousers and jumpsuits girl?</h2>
-              <div class="input-field">
-                <select id ="selectStyle">
-                  <option value="" disabled selected>Choose your option</option>
-                  <option value="skirt">Dresses and skirts</option>
-                  <option value="trousers">Trousers and jumpsuits</option>
-                  <option value="both">A  bit of both</option>
-                </select>
-                <label>1. Select your style</label>
-              </div>
-
-                  <h2>What event have you got planned for today that you need an outfit for?</h2>
                   
-                      <div class="input-field">
-                      <select id ="testingSelect">
-                         
-                        <option value="" disabled selected>Choose your option</option>
-                        <option value="casual">Meeting a friend for coffee</option>
-                        <option value ="work">Unfortunately working to pay the bills!</option>
-                        <option value ="work">A job interview</option>
-                        <option value ="romance">Having a date with a current partner</option>
-                        <option value ="romance">Having a date with a potential partner</option>
-                        <option value ="romance">Drinks with some friends</option>
-                        <option value="walk">Going for a walk</option>
-                        <option value = "yoga">Yoga/Working out</option>
-                        <option value="concert">Going to a concert</option>
-                        <option value="sport"disabled>Going to a sporting event</option>
-                    
-                      </select>
-                      <label>2. Select your event</label>
-                     
-        
-                    </div>
-                    <button id="outfitSelector">click</button><br>
-                    <div class="row">
-                    <!-- <button style="display:none" id ="reShuffleBtn">Reshuffle!</button></div> -->
-                    <span id="buttonAppear"></span>
-                    <div id="outfitViewer">
-
-                      <!-- <div class="row">
-                        <div class="col s12 m12 l5">
-                        <div class="item" style="display:none"id="outfitOne"></div>
-                      </div>
-                        <div class="col s12 m12 l2"id="orCont"><h1 id="orWording"></h1>
-                        </div>
-                        <div class="col s12 m12 l5">
-                        <div class="item" style="display:none"id="outfitTwo"></div>
-                      </div>
-                    </div> -->
-                    <!-- <h3 id="reShuffleText"></h3> -->
-                    
-
-
-                    </div>
                    
                   <!-- </div> -->
          
@@ -379,7 +329,7 @@
               get: 'user',
               target: "instafeed-container",
                 resolution: 'standard_resolution',
-                limit: 8,
+                limit: 3,
                 link: 'true',
                 caption: 'true',
                 sortBy: 'most-recent',
@@ -387,7 +337,7 @@
               
             
             filter: function(image) {
-                var MAX_LENGTH = 60;
+                var MAX_LENGTH = 30;
 
                 // here we create a property called "short_caption"
                 // on the image object, using the original caption
@@ -401,7 +351,7 @@
                 // ensure the filter doesn't reject any images
                 return true;
               },
-  template:  '<div class="card col s12 m12 l3"id="instaPhoto"><img src="{{image}}"id="instaImage"/><div class="caption"id="instaCaption">{{caption}}</div></div>'
+  template:  '<div class="card col s12 m12 l4"id="instaPhoto"><img src="{{image}}"id="instaImage"/><div class="caption"id="instaCaption">{{caption}}</div></div>'
 
 });
             userFeed.run();
