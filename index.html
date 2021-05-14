@@ -124,32 +124,32 @@
           </div>
            </div>
         </div>
-        <!-- <ul id='dropdown1' class='dropdown-content'data-hover="hover">
-            <li><a href="http://instagram.com/estyler_outfit"><img src="instagramestyler-01.png"id="instaLogo"></a></li>
-           
-          </ul> -->
+        
       <!-- Top Image section -->
+      <br>
+      <br>
+      <br>
+      <br>
+      
+      <div class="row">
       <div class="container"id="topImageContainer" data-aos="fade-up">
-        <img src="ladiesoneoutfits-01.png"id="ladiesOutfitsImage">
+        <img class="img-fluid"src="ladiesoneoutfits-01.png"id="ladiesOutfitsImage">
       <h1>hello</h1>
       </div>
+    </div>
+    <div class="row">
       <div class="container"id="redWaveContainer">
-        <div class="row">
+        
         <img src="redwave-01.png"id="redWave">
       </div>
       </div>
-      <div class="row">
-      <div class="container" id ="outfit-generate">
-        <ul></ul>
-        <ul></ul>
-      </div>
-    </div>
+     
 
       <!-- Card section -->
     
       
       <div class="row">
-        <div class="flexbox">
+        <div class="flexbox col 12">
            
                 <div class="card col s12 m12 l4">
                   <div class="card-title">
@@ -157,7 +157,7 @@
                     <img src="whitewave-01.png"id="whiteWave">
                   </div>
                   <div class="card-content">
-                    <p>eStyler finds the ultimate outfit for you based on your style preferences and your occasion!</p>
+                    <p>eStyler generates the ultimate outfit choices for you based on your style preferences and your occasion!</p>
                   </div>
                  
                 </div>
@@ -169,7 +169,7 @@
                       <img src="whitewave-01.png"id="whiteWave">
                     </div>
                     <div class="card-content">
-                      <p>We aim to inspire you to recycle and rewear your clothes! We promote sustainable fashion.</p>
+                      <p>We aim to inspire you to recycle and rewear your clothes, to shop sustainably and to firstly always work with what you already own!</p>
                     </div>
                     
                   </div>
@@ -192,22 +192,23 @@
         
 
           <!-- Middle image section -->
-         
+         <div class="row">
           <div class="container"id="midImageContainer" data-aos="fade-up">
               <img src="ladiestwooutfits-01.png"id="ladiesOutfitsImageTwo">
                <h1>hello</h1>
           </div>
+        </div>
         
-          
+          <div class="row">
         <div class="container"id="redWaveContainer">
-            <div class="row">
+           
             <img src="redwave-01.png"id="redWave">
           </div>
           </div>
 
           <!-- outfit generate section -->
           <!-- need to edit this bit -->
-          
+          <div class="row">
           <div class="container"id="container">
                 
           </div>
@@ -245,7 +246,10 @@
                  
     
                 </div>
-                <button id="outfitSelector">click</button><br>
+                <label>3. Click to find an outfit!</label><br><br>
+                <button id="outfitSelector">Find!</button>
+                
+              </div>
                 
                 <!-- <button style="display:none" id ="reShuffleBtn">Reshuffle!</button></div> -->
                 
@@ -256,28 +260,9 @@
 
                 </div>
               </div>
+              <span id="textReShuffleAppear"></span>
               <span id="buttonAppear"></span>
-          <div class="container col s12" id="estyleGenerateSection">
-            
-            
-      
-            
-           
-                  <!-- items which contains the outfits: set to hidden so that user can only see them when function runs   -->
-              <div class="row">
-                <div class="col s12 m12 l5">
-                <div class="item" style="display:none"id="outfitOne"></div>
-              </div>
-                <div class="col s12 m12 l2"id="orCont"><h1 id="orWording"></h1>
-                </div>
-                <div class="col s12 m12 l5">
-                <div class="item" style="display:none"id="outfitTwo"></div>
-              </div>
-            </div>
-            <h3 id="reShuffleText"></h3>
-            <button type="submit" style="display:none" id ="reShuffleBtn">Reshuffle!</button>
-          
-          </div>
+       
           <div class="container"id="redWaveContainer">
               <div class="row">
               <img src="redwave-01.png"id="redWave">
@@ -295,7 +280,7 @@
                
                 
                       <div class="row">
-                    <div class= "flexbox"id="instafeed-container">
+                    <div class= "flexbox col 12"id="instafeed-container">
                       <!-- <a href="{{link}}"><img title="{{caption}}" src="{{image}}" /></a> -->
                     </div>
                   </div>
@@ -326,7 +311,7 @@
               get: 'user',
               target: "instafeed-container",
                 resolution: 'standard_resolution',
-                limit: 3,
+                limit: 6,
                 link: 'true',
                 caption: 'false',
                 sortBy: 'most-recent',

@@ -74,9 +74,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const userSelectedOccasion = document.getElementById('selectOccasion');
 
   // gets the value that the user selected
-  
-  document.getElementById("reShuffleBtn").style.visibility= 'none';
-
 
 // NEED TO WORK ON THIS
 
@@ -86,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // assign onclick handlers to the buttons
     
     // reshuffle button runs event again if user unhappy with choices
-    document.getElementById('reShuffleBtn').addEventListener('click', testing );;
+   
    
 
     // need to streamline if statements
@@ -105,7 +102,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
       var container = document.querySelector('#outfitViewer');
 
-      // document.getElementById("reShuffleBtn").style.visibility= 'none';
       function createElement(doc){
 
 
@@ -122,17 +118,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
           img.setAttribute('src', doc.data().imageurl);
           img.setAttribute('alt', doc.data().imagedesc);
-          // h3.setAttribute('value', doc.data().tip);
-          // img.setAttribute('alt', doc.data().imagetip);
-          // card.cardContent= doc.data();
           h1.textContent = doc.data().imagedesc;
           h3.textContent= doc.data().tip;
-          // reText.textContent='Dont like either? Thats fine! You can reshuffle!';
-          // reShuf.btn = 'Reshuffle';
           
-          // document.getElementById("reShuffleText").innerHTML = reshuffleHeading;
-          // document.getElementById("reShuffleBtn").style.display = 'block';
-          // document.getElementById("reShuffleBtn").style.display = 'block';
           // container.appendChild(card);
           container.appendChild(h1);
           container.appendChild(h3);
@@ -165,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
       var displayCasualTest;
 
       var btn = document.getElementById('outfitSelector').addEventListener('click', testing );;
-      document.getElementById('reShuffleBtn').addEventListener('click', testing );;
+      
     
 
       const userSelectTest = document.getElementById('testingSelect');
@@ -180,12 +168,13 @@ document.addEventListener('DOMContentLoaded', function() {
         getTestSelect = userSelectTest.options[userSelectTest.selectedIndex].value;
        console.log(getStyleSelect);
        
-
+       var randomInt;
+      randomInt = Math.floor(Math.random() * 6);
     
       // if user selects casual from the options; the db collection looks for an array that contains casual under occasionoption then displays this in createelement
       if ( getTestSelect === 'casual' && getStyleSelect === 'both') {
         container.innerHTML ="";
-        document.getElementById("reShuffleBtn").style.display = 'block';
+        
         // container.innerHTML = "";
         // add ['casual','trouser'] and skirt to each one
         
@@ -193,10 +182,13 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // array-contains-any ['casual','skirt'] 
         // array contains casual
-        db.collection('outfits').where('occasionoption', 'array-contains', 'bothcasual').get().then(snapshot => {
+        db.collection('outfits').where('occasionoption', 'array-contains', 'bothcasual').limit(2).get().then(snapshot => {
 
-         
-            snapshot.docs.forEach(doc => {
+          
+            snapshot.docs.forEach (doc => {
+              // randomOutfit = snapshot.doc[Math.floor(Math.random()*snapshot.doc.length)];
+              
+              console.log(snapshot.doc)
                 console.log(doc.data())
                 
                 createElement(doc);
@@ -208,7 +200,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       else if ( getTestSelect === 'casual' && getStyleSelect === 'skirt') {
         container.innerHTML ="";
-        document.getElementById("reShuffleBtn").style.display = 'block';
+       
         // container.innerHTML = "";
         // add ['casual','trouser'] and skirt to each one
         
@@ -231,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       else if ( getTestSelect === 'casual' && getStyleSelect === 'trousers') {
         container.innerHTML ="";
-        document.getElementById("reShuffleBtn").style.display = 'block';
+       
         // container.innerHTML = "";
         // add ['casual','trouser'] and skirt to each one
         
@@ -455,6 +447,7 @@ else if (getTestSelect ==='' && getStyleSelect === '' ){
 
   // document.getElementById("reShuffleText").innerHTML = reshuffleHeading;
   // document.getElementById("reShuffleBtn").style.display = 'block';
+  document.getElementById("textReShuffleAppear").innerHTML = '<h1>Dont like either? Thats ok, you  can reshuffle!</h1>';
   document.getElementById("buttonAppear").innerHTML = '<button onclick="testing()">Reshuffle</button>';
 
       }

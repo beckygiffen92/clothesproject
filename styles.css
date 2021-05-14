@@ -78,12 +78,12 @@ text-decoration: underline!important;
 }
 #topImageContainer,#midImageContainer{
   /* need to change this v v v */
-    margin-top: 100px;
+    /* margin-top: 100px; */
     
     background-color: #F3D9DC;
     text-align: center;
-    width: 80%;
-    height: 600px;
+    width: 100%!important;
+    height: 800px;
 }
 
 
@@ -120,41 +120,19 @@ button{
 
 /* need to change width and height settings here and alignment*/
 .row{
-  margin-right: 15px!important;
-  margin-bottom: 0!important;
-}
-/* #secondCard{
-  
-    margin: 10px;
-    
-    padding: 10px;
-    align-content: center;
-    height: 400px;
-    background-color: #EE6055;
-    color: #FDFFFC;
-    
-   
-}
-#firstCard{
-  margin: 10px;
- 
-  padding: 10px;
-  align-content: center;
-  height: 400px;
-  background-color: #EE6055;
-  color: #FDFFFC;
+  margin-right: 0!important;
   
 }
-#thirdCard{
- 
-  
+#container{
+  width: 80%;
+}
+/* change colour of font in the dropdown menu */
+.dropdown-content li a, .dropdown-content li span{
+  color: #EE6055!important;
+}
 
-  height: 400px;
-  background-color: #EE6055;
-  color: #FDFFFC;
-} */
 .container{
-  width: 100%!important;
+  max-width: 100%!important;
   text-align: center;
   
  
@@ -162,9 +140,10 @@ button{
 .flexbox {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center!important;
   align-items: center;
- 
+  text-align: center!important;
+  
   margin: 10px;
   margin-left: 30px!important;
   
@@ -216,12 +195,10 @@ button{
         max-width:70%;
       }
   
-    #ladiesOutfitsImage,#ladiesOutfitsImageTwo{
-      width: 30%;
-    }
+   
     #topImageContainer,#midImageContainer{
      height: 200px;
-     width: 80%!important;
+     width: 100%!important;
   }
   
 
