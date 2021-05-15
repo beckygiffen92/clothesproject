@@ -29,9 +29,9 @@ const setUpMembersDisc =(data) =>{        //putting data inside the array
     const discount = doc.data();    //going through the array vv creating an li with h2 and p for each store and discountcode
     const li = `
 
-      <li>  
-      <h2>${discount.store}</h2>
-      <p>${discount.discountcode}</p>
+      <li>
+      <h3>${discount.store} </h3>
+      <h3> - ${discount.discountcode}</h3><br>
       </li>
     `;             //`` output data inside curly strings
     html += li;
@@ -39,7 +39,7 @@ const setUpMembersDisc =(data) =>{        //putting data inside the array
 
   discountList.innerHTML = html;
 }else {       //this message appears if user clicjs discount codes but not logged in
-  discountList.innerHTML = '<h5 class="center-align">no outfits</h5>'
+  discountList.innerHTML = '<h1 class="center-align">Oops! No discount codes are available at this time. Check again later!</h1>'
 }}
 
 // setup materialize components

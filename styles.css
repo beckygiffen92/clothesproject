@@ -16,6 +16,16 @@ nav{
     
     
 }
+.footer{
+  background-color: #F3D9DC;
+  color: #FDFFFC;
+  text-align: center;
+    padding: 80px;
+  
+}
+.footer img{
+  width: 5%;
+}
 .brand-logo{
     font-size: 60px!important;
     /* padding: 50px; */
@@ -93,6 +103,9 @@ h1{
 h3{
     font-size: 24px!important;
 }
+p{
+  font-size: 16px;
+}
 a{
     font-size: 18px!important;
 }
@@ -123,9 +136,15 @@ button{
   margin-right: 0!important;
   
 }
-#container{
-  width: 80%;
+#discount-list{
+  text-align: left!important;
 }
+#discount-list h3 {
+  
+    display: inline;
+ 
+}
+
 /* change colour of font in the dropdown menu */
 .dropdown-content li a, .dropdown-content li span{
   color: #EE6055!important;
