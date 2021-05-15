@@ -62,6 +62,13 @@ document.addEventListener('DOMContentLoaded', function() {
   })
   // -------------OUTFIT GENERATE SECTION!!! --------------------------------
 
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, {});
+  });
+  var collapsibleElem = document.querySelector('.collapsible');
+  var collapsibleInstance = M.Collapsible.init(collapsibleElem, {});
+
 
   let introEstyle = 'Here are the outfits we have generated for you!';
   let reshuffleHeading ="Don't like either? Thats ok! You can reshuffle!";

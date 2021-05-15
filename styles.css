@@ -7,7 +7,7 @@ font-weight: 500;
 font-style: normal;
 }
 nav{
-    background-color: #EE6055!important;
+    background-color: #D55672!important;
     padding: 80px;
 }
 .navbar{
@@ -15,6 +15,13 @@ nav{
     color: #FDFFFC;
     
     
+}
+.sidenav{
+background-color: #D55672!important;
+}
+
+.sidenav li a {
+  color: #FDFFFC!important;
 }
 .footer{
   background-color: #F3D9DC;
@@ -100,11 +107,15 @@ text-decoration: underline!important;
 h1{
     font-size: 40px!important;
 }
+h2{
+  font-size: 30px!important;
+}
 h3{
     font-size: 24px!important;
 }
 p{
-  font-size: 16px;
+  font-size: 16px!important;
+  font-weight: 400;
 }
 a{
     font-size: 18px!important;
@@ -115,22 +126,10 @@ button{
 #ladiesOutfitsImage,#ladiesOutfitsImageTwo{
   width: 40%;
 }
-#topCardsContainer{
-  align-content: center!important;
-    align-items: center!important;
-    text-align: center!important;
-    margin: 10px;
-    padding: 20px;
-    
-    
-    /* padding: 0px!important;
-    top: 50%;
-    left: 50%;
-    right: 50%; */
-    /* margin-right: 100px; */
-   
-}
 
+#topCardsContainer p{
+  text-align: left!important;
+}
 /* need to change width and height settings here and alignment*/
 .row{
   margin-right: 0!important;
@@ -191,11 +190,17 @@ button{
   max-width: 90%;
   height: auto!important;
 }
+.d-flex{
+  display: inline-flex;
+}
+
 .card{
+  display: flex; 
+  flex-flow: row wrap;
   height: auto;
   justify-content: center;
   align-items: center;
-  background-color: #EE6055!important;
+  background-color: #D55672!important;
   color: #FDFFFC;
   width: 25%!important;
   margin: 10px!important;
