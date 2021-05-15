@@ -126,9 +126,15 @@ button{
 #ladiesOutfitsImage,#ladiesOutfitsImageTwo{
   width: 40%;
 }
-
+#topCardsContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center!important;
+}
 #topCardsContainer p{
   text-align: left!important;
+  font-size: 18px!important;
 }
 /* need to change width and height settings here and alignment*/
 .row{
@@ -156,14 +162,13 @@ button{
  
 }
 .flexbox {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center!important;
-  align-items: center;
-  text-align: center!important;
+  display:inline-block;
   
-  margin: 10px;
-  margin-left: 30px!important;
+  
+
+  text-align: center!important;
+ 
+ 
   
 }
 #instafeed-container{
@@ -179,7 +184,7 @@ button{
   height: auto;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: center!important;
   background-color: #F3D9DC!important;
   color: #FDFFFC;
   width: 25%!important;
@@ -187,17 +192,15 @@ button{
   padding: 20px!important;
 }
 #instafeed-container img{
-  max-width: 90%;
+  max-width: 100%;
   height: auto!important;
 }
-.d-flex{
-  display: inline-flex;
-}
 
-.card{
+/* .card{
   display: flex; 
   flex-flow: row wrap;
   height: auto;
+  text-align:center!important;
   justify-content: center;
   align-items: center;
   background-color: #D55672!important;
@@ -205,7 +208,21 @@ button{
   width: 25%!important;
   margin: 10px!important;
   padding: 20px!important;
+} */
+.card {
+  background-color: #D55672!important;
+  color: #FDFFFC;
+  text-align:center!important;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 10px!important;
+  margin-right: auto;
+  /* padding: 20px!important; */
 }
+
 
 /* cardswill take up 100% of width if smaller than 991px wide */
 @media only screen and (max-width: 991px) {
@@ -229,16 +246,16 @@ button{
   }
   @media only screen and (min-width: 425px) {
   
-      #instafeed-container img{
-        max-width:60%;
-      }
+  
       #instaCaption{
         font-size: 14px!important;
       }
   
   }
   @media only screen and (min-width: 320px){
-  
+    .card{
+      width: 100%!important;
+    }
       #instafeed-container img{
         max-width:100%;
       }
@@ -251,7 +268,7 @@ button{
   @media only screen and (min-width: 525px) {
    
       #instafeed-container img{
-       max-width:60%;
+       max-width:100%;
       }
      #imageCaption{
        font-size: 16px!important;
@@ -259,7 +276,9 @@ button{
   }
   
   @media only screen and (min-width: 992px) {
-
+    .card{
+      width: 25%!important;
+    }
     #instafeed-container img{
       width: 100%!important;
     }
@@ -273,6 +292,7 @@ button{
 .card-title{
     text-align: center;
 }
+
 #whiteWave{
     width: 30%;
 }
@@ -359,19 +379,4 @@ button{
   #orCont{
      
       text-align: center;
-  }
-
-
-
- .wrap{
-    justify-content: center!important;
-    /* text-align: left!important; */
-    padding: 20px!important;
-    margin: 5px!important;
-    margin-right: auto!important;
-    display: inline-block!important;
-    background-color: #F3D9DC!important;
-    width: 100%!important;
-    /* max-height: 20px!important; */
-
   }

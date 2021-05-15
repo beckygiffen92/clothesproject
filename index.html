@@ -179,8 +179,9 @@
       <!-- Card section -->
     
       
-      <div class="row d-flex">
-        <div class="flexbox col 12" id="topCardsContainer">
+      <div class="row">
+        
+        <div class="flexbox" id="topCardsContainer">
            
                 <div class="card col s12 m12 l4">
                   <div class="card-title">
@@ -218,9 +219,10 @@
                     </div>
                   
                   </div>
-                  </div>
+                </div>
                 
-        
+             
+        <br>
 
           <!-- Middle image section -->
          <div class="row">
@@ -364,7 +366,7 @@
                 // ensure the filter doesn't reject any images
                 return true;
               },
-  template:  '<div class="card col s12 m12 l4 overflow: hidden"id="instaPhoto"><img src="{{image}}"class="img-fluid"id="instaImage"/><div class="caption"id="instaCaption">{{caption}}</div></div>'
+  template:  '<div class="card col s12 m12 l4 overflow: hidden"id="instaPhoto"><img src="{{image}}"class="img-fluid"id="instaImage"/><br><div class="caption"id="instaCaption">{{caption}}</div></div>'
 
 });
             userFeed.run();
