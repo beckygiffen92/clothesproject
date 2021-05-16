@@ -5,6 +5,8 @@ font-family: 'futura-pt', sans-serif;
 font-weight: 500;
 
 font-style: normal;
+background-color: #FDFFFC;
+color: #090302;
 }
 nav{
     background-color: #D55672!important;
@@ -25,14 +27,12 @@ background-color: #D55672!important;
 }
 .footer{
   background-color: #F3D9DC;
-  color: #FDFFFC;
+  margin-bottom: -50px;
   text-align: center;
+  max-width: 100%;
     padding: 80px;
-  
 }
-.footer img{
-  width: 5%;
-}
+
 .brand-logo{
     font-size: 60px!important;
     /* padding: 50px; */
@@ -50,36 +50,25 @@ background-color: #D55672!important;
     background-color: inherit;
 }
 .modal-content{
+  margin: 10px;
+  padding: 20px;
   background-color: #F3D9DC;
   text-align: center;
   width: 100%;
 }
+.modal-content input{
+  color: #090302;
+}
 .modal-content img{
   width: 10%!important;
 }
-/* .dropdown-trigger{
-  background-color: inherit!important;
-  text-transform: none!important;
-  border: none!important;
-  box-shadow: none!important;
+#modal-colourpalettes p{
+text-align: left;
 }
-.dropdown:hover{
-text-decoration: underline!important;
-}
-.btn{
-  text-decoration: none!important;
-  text-transform: inherit;
-}
-.dropdown-content{
-  height: 80px;
-  background-color: #EE6055;
-}
-.dropdown-content li{
-  background-color: #EE6055;
-}
-.dropdown-content li img{
+.modal-content #colWheel{
   width: 30%!important;
-} */
+}
+
 
 #signout:hover{
     text-decoration: underline;
@@ -100,7 +89,20 @@ text-decoration: underline!important;
     background-color: #F3D9DC;
     text-align: center;
     width: 100%!important;
-    height: 800px;
+    
+}
+h1 span{
+  background-color: #FDFFFC;
+  padding: 2px;
+}
+.no-overlap{
+  text-overflow:ellipsis;
+white-space:no-wrap;
+overflow:hidden;
+}
+h2 span{
+  background-color: #FDFFFC;
+  padding: 1px;
 }
 
 
@@ -111,7 +113,10 @@ h2{
   font-size: 30px!important;
 }
 h3{
-    font-size: 24px!important;
+    font-size: 20px!important;
+}
+h4{
+  font-size: 16px!important;
 }
 p{
   font-size: 16px!important;
@@ -124,14 +129,17 @@ button{
     font-size: 18px!important;
 }
 #ladiesOutfitsImage,#ladiesOutfitsImageTwo{
-  width: 40%;
+  width: 60%;
 }
 #topCardsContainer{
-  display: flex;
-  align-items: center;
-  justify-content: center;
   text-align: center!important;
+ 
+  justify-content: center;
+  align-items: center;
+ 
+  
 }
+
 #topCardsContainer p{
   text-align: left!important;
   font-size: 18px!important;
@@ -152,9 +160,21 @@ button{
 
 /* change colour of font in the dropdown menu */
 .dropdown-content li a, .dropdown-content li span{
-  color: #EE6055!important;
+  color: #4E5355!important;
 }
-
+.select-wrapper input.select-dropdown{
+border-bottom: 1px solid #D55672!important;
+}
+button{
+ background: #96C5B0!important;
+ color: #06070E;
+ padding: 10px;
+ border: none;
+ border-radius: 4px;
+}
+button:hover{
+  background: #ADF1D2!important;
+}
 .container{
   max-width: 100%!important;
   text-align: center;
@@ -186,7 +206,7 @@ button{
   align-items: center;
   text-align: center!important;
   background-color: #F3D9DC!important;
-  color: #FDFFFC;
+  color: #090302;
   width: 25%!important;
   margin: 10px!important;
   padding: 20px!important;
@@ -217,12 +237,11 @@ button{
   align-items: center;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 25%!important;
   margin: 10px!important;
   margin-right: auto;
   /* padding: 20px!important; */
 }
-
 
 /* cardswill take up 100% of width if smaller than 991px wide */
 @media only screen and (max-width: 991px) {
@@ -235,24 +254,59 @@ button{
       #instafeed-container img{
         max-width:70%;
       }
-  
+      h1{
+        font-size: 20px!important;
+      }
+      h2{
+        font-size: 16px!important;
+      }
    
     #topImageContainer,#midImageContainer{
-     height: 200px;
+   
      width: 100%!important;
+  }
+  #outfitViewer img{
+    border: 5px solid #D55672;
+    width: 50%!important;
+   
+    /* display: flex;
+    flex-wrap: wrap; */
+    
   }
   
 
   }
   @media only screen and (min-width: 425px) {
-  
-  
+    h1{
+      font-size: 20px!important;
+    }
+    h2{
+      font-size: 16px!important;
+    }
+    .card{
+      width: 100%!important;
+    }
       #instaCaption{
         font-size: 14px!important;
+      }
+      #outfitViewer img{
+        border: 5px solid #D55672;
+        width: 50%!important;
+       
+        /* display: flex;
+        flex-wrap: wrap; */
+        
       }
   
   }
   @media only screen and (min-width: 320px){
+
+    h1{
+      font-size: 20px!important;
+    }
+    h2{
+      font-size: 16px!important;
+    }
     .card{
       width: 100%!important;
     }
@@ -262,17 +316,35 @@ button{
       #instaCaption{
         font-size: 14px!important;
       }
+      #outfitViewer img{
+        border: 5px solid #D55672;
+        width: 50%!important;
+       
+        /* display: flex;
+        flex-wrap: wrap; */
+        
+      }
   }
   
   
   @media only screen and (min-width: 525px) {
-   
+   .card{
+     width: 100%!important;  
+   }
       #instafeed-container img{
        max-width:100%;
       }
      #imageCaption{
        font-size: 16px!important;
      }
+     #outfitViewer img{
+      border: 5px solid #D55672;
+      width: 50%!important;
+     
+      /* display: flex;
+      flex-wrap: wrap; */
+      
+    }
   }
   
   @media only screen and (min-width: 992px) {
@@ -285,6 +357,21 @@ button{
     #instaCaption{
       font-size: 18px!important;
     }
+    h1{
+      font-size: 40px!important;
+
+    }
+    h2{
+      font-size: 30px!important;
+    }
+    #outfitViewer img{
+      border: 50px solid #D55672!important;
+      width: 50%!important;
+     
+      /* display: flex;
+      flex-wrap: wrap; */
+      
+    }
   }
   
   /* cardswill take up 30% of width if atleast 992px wide */
@@ -296,6 +383,7 @@ button{
 #whiteWave{
     width: 30%;
 }
+
 
 
 /* practicing with fade ins */
@@ -330,7 +418,7 @@ button{
     width: 100%!important;
   }
   #outfitViewer img{
-    border: 50px solid #EE6055;
+    border: 5px solid #D55672;
     width: 50%!important;
    
     /* display: flex;

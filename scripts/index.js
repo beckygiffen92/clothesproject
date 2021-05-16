@@ -31,7 +31,7 @@ const setUpMembersDisc =(data) =>{        //putting data inside the array
 
       <li>
       <h3>${discount.store} </h3>
-      <h3> - ${discount.discountcode}</h3><br>
+      <h3> - ${discount.discountcode}</h3><br><br>
       </li>
     `;             //`` output data inside curly strings
     html += li;

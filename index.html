@@ -79,27 +79,28 @@
 
     <!-- modals -->
    <div id="modal-signup"class="modal">
-       <div id="modal-content">
-         <h4>Sign up</h4><br>
+       <div class="modal-content">
+         <h1>Sign up</h1>
+         <h2>Signing up allows you to have exclusive access to discounts and more!</h2><br>
     <form id="signupForm">
             <div class="input-field">
-              <!-- <label for="email">Email address</label> -->
-              <input type="email" class="form-control" id="signUpEmail" aria-describedby="emailHelp" placeholder="Enter email">
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" id="signUpEmail" aria-describedby="emailHelp">
               
             </div>
             <div class="input-field">
-              <!-- <label for="exampleInputPassword1">Password</label> -->
-              <input type="password" class="form-control" id="signUpPassword" placeholder="Password">
+              <label for="exampleInputPassword1">Create Password</label>
+              <input type="password" class="form-control" id="signUpPassword">
             </div>
            
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit">Submit</button>
           </form>
         </div>
         </div>
 
         <div id="modal-signin" class="modal">
           <div class="modal-content">
-            <h4>Log in</h4><br />
+            <h1>Log in</h1><br />
             <form id="login-form">
               <div class="input-field">
                 <input type="email" id="login-email" required />
@@ -109,7 +110,7 @@
                 <input type="password" id="login-password" required />
                 <label for="login-password">Your password</label>
               </div>
-              <button class="btn yellow darken-2 z-depth-0">Login</button>
+              <button>Login</button>
             </form>
           </div>
          </div>
@@ -117,25 +118,46 @@
           
             <div id="modal-onetoone"class="modal">
               <div class="modal-content">
-                  <h3>Book a 1:1 with a Stylist!</h3>
+                  <h1>Personal Stylist</h1>
+                  <img src="blackwave-01.png"id="whiteWave">
+             
                   <div id="onetone-info">
-                  <p>Do you need fashion advice?</p>
+                  <p>Coming Soon!</p>
                   </div>
               </div>
             </div>
 
           <div id="modal-colourpalettes"class="modal">
             <div class="modal-content">
-              <h3>How to choose the right colour for you</h3>
-              <p>lorem ipsum</p>
+              <h1>Colour Palettes</h1>
+              <img src="blackwave-01.png" id="whiteWave">
+              <h2>What to consider when picking colours:</h2>
+              
+             <img src="colourwheel-01.png"id="colWheel">
+             <h3>The Colour wheel</h3>
+                <p>It's actually very simple, but always refer back to the colour wheel. The colour wheel is used for nearly everything in life, whether its home interiors or graphic design; the colour wheel is always used.</p>
+                
+                <img src="colouropposites-01.png"id="colWheel">
+                <h3>Opposites attract</h3>
+                <p>All these colours sit opposite on the colour wheel, they compliment eachother well which is perfect for those who want a bit of contrast in their outfits.</p>
+            
+             <img src="coloursames-01.png"id="colWheel">
+             <h3>Monochromatic</h3>
+              <p>Monochromatic means all the same pretty much. These colours are all next to eachother on the colour wheel. They are of the same colour but a different hue. Different hues work well together if you want to keep your outfit all in one colour.</p>
+              
+              <img src="colourneut-01.png" id="colWheel">
+              <h3>Neutrals</h3>
+              <p>Grey scale and neutral colours, such as browns, camels and rusts naturally compliment one another. A pop of colour in an all black or all white outfit can really make the outfit pop.</p>
+            
             </div>
           </div>
 
         <div id="modal-members"class="modal">
 
           <div class="modal-content">
-              <h3>Membership</h3>
-              <h4>Exclusive Discount Codes:</h4>
+              <h1>Exclusive Discount Codes</h1>
+              <img src="blackwave-01.png"id="whiteWave">
+             
               <div class="row">
               <div class="account-details" id ="discount-list">
                 <ul></ul>
@@ -164,8 +186,12 @@
       
       <div class="row">
       <div class="container"id="topImageContainer" data-aos="fade-up">
-        <img class="img-fluid"src="ladiesoneoutfits-01.png"id="ladiesOutfitsImage">
-      <h1>hello</h1>
+        <br><br>
+        <img src="allladiesoutfits-01.png"class="img-fluid"id="ladiesOutfitsImage">
+     <h1><span> eStyler - "the ultimate outfit generator"</span></h1>
+     <h2><span>Because no matter who you are, EVERYONE is welcome.</span></h2>
+     <br>
+     <br>
       </div>
     </div>
     <div class="row">
@@ -181,7 +207,7 @@
       
       <div class="row">
         
-        <div class="flexbox" id="topCardsContainer">
+        <div class="flexbox col 12" id="topCardsContainer">
            
                 <div class="card col s12 m12 l4">
                   <div class="card-title">
@@ -223,12 +249,27 @@
                 
              
         <br>
+        <div class="row">
+            <div class="container"id="redWaveContainer">
+               
+                <img src="redwave-01.png"id="redWave">
+              </div>
+              </div>
 
           <!-- Middle image section -->
          <div class="row">
           <div class="container"id="midImageContainer" data-aos="fade-up">
-              <img src="ladiestwooutfits-01.png"id="ladiesOutfitsImageTwo">
-               <h1>hello</h1>
+            <br><br>
+              
+              <h1><span class="no-overlap"> • What can I do to contribute to a more sustainable fashion industry? </span></h1>
+              <h2><span class="no-overlap"> • Extend how long you wear an item by atleast nine months </span></h2>
+              <h2><span class="no-overlap"> • When you want to buy something new, try searching charity shops first </span></h2>
+              <h2><span class="no-overlap"> • Research into brands before purchasing, do they use sustainable materials? </span></h2>
+              <h2><span class="no-overlap"> • Swap clothes with friends! </span></h2>
+              <h2><span class="no-overlap"> • If there's an item you want for a specific occasion only, try seeing if you can rent it rather than purchasing </span></h2>
+              <h2><span class="no-overlap"> • Donate unwanted clothes to foodbanks and charity shops </span></h2>
+              <br>
+              <br>
           </div>
         </div>
         
@@ -333,9 +374,10 @@
                   <div class="row">
         <div class="footer">
           <p>eStyler©<p>
-            <img src="instagramestyler-01.png" id="instaLogo">
+            
         </div>
       </div>
+     
             <script src="https://cdn.jsdelivr.net/gh/stevenschobert/instafeed.js@2.0.0rc1/src/instafeed.min.js"></script>
             <script type="text/javascript">
             var userFeed = new Instafeed({
