@@ -164,13 +164,35 @@ h2 span{
 }
 
 /* putting the container all in the center */
-#topCardsContainer{
+/* #topCardsContainer{
   text-align: center;
   justify-content: center;
   align-items: center;
   max-width: 70%;
  
+} */
+#topCardsContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  margin-left: 30px;
 }
+
+/* height auto they will be as long as the content is, everything will be in the center and the width being 25% meaning that they sit nicely in their columsn */
+#topCardsContainer .card{
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #D55672;
+  color: #FDFFFC;
+  width: 25%;
+  margin: 10px;
+  padding: 20px;
+}
+
 
 /* putting the p of id of the container  to align to the left and have this font size */
 #topCardsContainer p{
@@ -345,6 +367,10 @@ button:hover{
     .card{
       width: 100%;
       }
+
+      #topCardsContainer .card{
+        width: 100%;
+        }
       #instafeed-container .card{
       width: 100%;
       }
@@ -355,7 +381,10 @@ button:hover{
         font-size: 20px;
       }
       h2{
-        font-size: 16px;
+        font-size: 18px;
+      }
+      p{ 
+        font-size: 12px;
       }
    
       #topImageContainer,#midImageContainer{  
@@ -374,7 +403,10 @@ button:hover{
       font-size: 20px;
     }
     h2{
-      font-size: 16px;
+      font-size: 18px;
+    }
+    p{ 
+      font-size: 12px;
     }
     .card{
       width: 100%;
@@ -395,7 +427,10 @@ button:hover{
       font-size: 20px;
     }
     h2{
-      font-size: 16px;
+      font-size: 18px;
+    }
+    p{ 
+      font-size: 12px;
     }
     .card{
       width: 100%;
@@ -447,6 +482,9 @@ button:hover{
     }
     h2{
       font-size: 30px;
+    }
+    p{ 
+      font-size: 16px;
     }
     #outfitViewer img{
       border: 50px solid #D55672;
