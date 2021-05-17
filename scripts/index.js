@@ -26,7 +26,7 @@ const setUpMembersDisc =(data) =>{        //putting data inside the array
   if (data.length){
   let html = '';
   data.forEach(doc =>{          //foreach document in the discountlist
-    const discount = doc.data();    //going through the array vv creating an li with h2 and p for each store and discountcode
+    const discount = doc.data();    //going through the array vv creating an li with h3 and h3 for each store and discountcode
     const li = `
 
       <li>
@@ -60,8 +60,9 @@ document.addEventListener('DOMContentLoaded', function() {
   AOS.init({
     duration: 1200,
   })
-  // -------------OUTFIT GENERATE SECTION!!! --------------------------------
+ 
 
+  // side nav to work using materialize 
   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
     var instances = M.Sidenav.init(elems, {});
@@ -69,393 +70,300 @@ document.addEventListener('DOMContentLoaded', function() {
   var collapsibleElem = document.querySelector('.collapsible');
   var collapsibleInstance = M.Collapsible.init(collapsibleElem, {});
 
-
-  let introEstyle = 'Here are the outfits we have generated for you!';
-  let reshuffleHeading ="Don't like either? Thats ok! You can reshuffle!";
-  let or ="OR";
   // creating consts of random array 
   
-
-    // get references to select list and display text box
-    // const userSelectedStyle = document.getElementById('selectStyle');
-    const userSelectedOccasion = document.getElementById('selectOccasion');
-
-  // gets the value that the user selected
-
-// NEED TO WORK ON THIS
-
-  // dbcollection (outfits).workwear = randomWork
-  
- 
-    // assign onclick handlers to the buttons
-    
-    // reshuffle button runs event again if user unhappy with choices
-   
-   
-
-    // need to streamline if statements
-
-    
+  // dropdown trigger function to load using materialize
   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.dropdown-trigger');
     var instances = M.Dropdown.init(elems, {});
   });
   
 
-
-
-
-     
-  
+      // variable container selecting the document with id of outfit viewer in the html
       var container = document.querySelector('#outfitViewer');
 
+      // creating an element for the outfit viewer
       function createElement(doc){
 
-
-          // container.innerHTML="";
-          // let card = document.createElement('card');
-
-          // let card = document.createElement('card');
+        // creating variables then creating those into documents in the html page
           let h1 = document.createElement('h1');
           let h3 = document.createElement('h3');
           let img = document.createElement('img');
-          // let reText = document.createElement('p');
-          // let reShuf = document.createElement('btn');
-        
 
+          // setting the image src and alt to the image url and image desc in the database
           img.setAttribute('src', doc.data().imageurl);
           img.setAttribute('alt', doc.data().imagedesc);
+
+          // putting context of our created variables with the text of the image desc and the tip from datavase
           h1.textContent = doc.data().imagedesc;
           h3.textContent= doc.data().tip;
           
-          // container.appendChild(card);
+          // updating the var container which is outfitviewer in the html page and putting these into them
           container.appendChild(h1);
           container.appendChild(h3);
           container.appendChild(img);
          
-         
-
-
-          
-          // container.appendChild(reText);
-          // container.appendChild(reShuf);
-      
-
-          // document.getElementById("hereAreTheOutfits").innerHTML = introEstyle;
-          //       document.getElementById("orWording").innerHTML = or;
       }
 
-      // var selection = document.querySelector('#outfitSelector');
-      
-      // db.collection('outfits').get().then(snapshot => {
-      //         snapshot.docs.forEach(doc => {
-      //             console.log(doc.data())
-      //             createElement(doc);
-      //         });
-      //     });
 
-      //https://firebase.google.com/docs/firestore/query-data/queries
-
-      var displayWorkTest;
-      var displayCasualTest;
-
+   
+      // when outfitselector button is clicjed, run the function called testing
       var btn = document.getElementById('outfitSelector').addEventListener('click', testing );;
       
     
-
+      // creating constants from the document id in html
       const userSelectTest = document.getElementById('testingSelect');
       const userSelectedStyle = document.getElementById('selectStyle');
+
+      // creating new variables
       var getTestSelect;
       var getStyleSelect;
-     
+
+
+    //  function called testing
       function testing(){
         
-      // gettestselect is created from the value the user has selected from the userselecttest selection
-         getStyleSelect = userSelectedStyle.options[userSelectedStyle.selectedIndex].value;
+        // get styleselect is created from the value the user has selected from the userselecteddstyle selection
+        // gettestselect is created from the value the user has selected from the userselecttest selection
+        getStyleSelect = userSelectedStyle.options[userSelectedStyle.selectedIndex].value;
         getTestSelect = userSelectTest.options[userSelectTest.selectedIndex].value;
-       console.log(getStyleSelect);
+        console.log(getStyleSelect);
        
-       var randomInt;
-      randomInt = Math.floor(Math.random() * 6);
+        // tried to make a random function here that could select random
+      //  var randomInt;
+      // randomInt = Math.floor(Math.random() * 6);
     
       // if user selects casual from the options; the db collection looks for an array that contains casual under occasionoption then displays this in createelement
-      if ( getTestSelect === 'casual' && getStyleSelect === 'both') {
-        container.innerHTML ="";
-        
-        // container.innerHTML = "";
-        // add ['casual','trouser'] and skirt to each one
-        
-        // var option = work[Math.floor(Math.random()*work.length)];
-        
-        // array-contains-any ['casual','skirt'] 
-        // array contains casual
-        db.collection('outfits').where('occasionoption', 'array-contains', 'bothcasual').limit(2).get().then(snapshot => {
-
-          
-            snapshot.docs.forEach (doc => {
-              // randomOutfit = snapshot.doc[Math.floor(Math.random()*snapshot.doc.length)];
+            if ( getTestSelect === 'casual' && getStyleSelect === 'both') {
+              container.innerHTML ="";
               
-              console.log(snapshot.doc)
-                console.log(doc.data())
-                
-                createElement(doc);
-            });
-            
-        });
-  
+              // tried to play with this to display a random 2 but couldnt get it to work
+              // db.collection('outfits').where('occasionoption', 'array-contains', 'bothcasual').limit(2).get().then(snapshot => 
 
-      }
-      else if ( getTestSelect === 'casual' && getStyleSelect === 'skirt') {
-        container.innerHTML ="";
-       
-        // container.innerHTML = "";
-        // add ['casual','trouser'] and skirt to each one
-        
-        // var option = work[Math.floor(Math.random()*work.length)];
-        
-        // array-contains-any ['casual','skirt'] 
-        // array contains casual
-        db.collection('outfits').where('occasionoption', 'array-contains', 'skirtcasual').get().then(snapshot => {
+              // finding outfits where occasionoption array contains this element
+              db.collection('outfits').where('occasionoption', 'array-contains', 'bothcasual').get().then(snapshot => {
+                  snapshot.docs.forEach (doc => {
+                    // tried playing with the random again
+                    // randomOutfit = snapshot.doc[Math.floor(Math.random()*snapshot.doc.length)];
+                    console.log(snapshot.doc)
+                      console.log(doc.data())
+                      // create element function
+                      createElement(doc);
+                  });
+                  
+              });
 
-         
-            snapshot.docs.forEach(doc => {
-                console.log(doc.data())
-               
-                createElement(doc);
-            });
-            
-        });
-  
+            }
+            // ifthey select casual and skirt display where arraycontains skirtcasual
+            else if ( getTestSelect === 'casual' && getStyleSelect === 'skirt') {
+              container.innerHTML ="";
+              db.collection('outfits').where('occasionoption', 'array-contains', 'skirtcasual').get().then(snapshot => {
+                  snapshot.docs.forEach(doc => {
+                      console.log(doc.data())
+                      createElement(doc);
+                  });
+              });
+            }
 
-      }
-      else if ( getTestSelect === 'casual' && getStyleSelect === 'trousers') {
-        container.innerHTML ="";
-       
-        // container.innerHTML = "";
-        // add ['casual','trouser'] and skirt to each one
-        
-        // var option = work[Math.floor(Math.random()*work.length)];
-        
-        // array-contains-any ['casual','skirt'] 
-        // array contains casual
-        db.collection('outfits').where('occasionoption', 'array-contains', 'trousercasual').get().then(snapshot => {
-
-         
-            snapshot.docs.forEach(doc => {
-                console.log(doc.data())
-               
-                createElement(doc);
-            });
-            
-        });
-  
-
-      }
-      
-       // if user selects work from the options; the db collection looks for an array that contains work under occasionoption then displays this in createelement
-      else if(getTestSelect === 'work' && getStyleSelect === 'both'){
-        container.innerHTML ="";
-        db.collection('outfits').where('occasionoption', 'array-contains', 'bothwork').get().then(snapshot => {
-         
+            // if tjeuy select causla and trousers display where array contains trousercasual
+            else if ( getTestSelect === 'casual' && getStyleSelect === 'trousers') {
+              container.innerHTML ="";
           
+              db.collection('outfits').where('occasionoption', 'array-contains', 'trousercasual').get().then(snapshot => {
+                  snapshot.docs.forEach(doc => {
+                      console.log(doc.data())
+                      createElement(doc);
+                  }); 
+              });
+            }
+            
+            // if user selects work from the options; the db collection looks for an array that contains work under occasionoption then displays this in createelement
+            else if(getTestSelect === 'work' && getStyleSelect === 'both'){
+              container.innerHTML ="";
+              db.collection('outfits').where('occasionoption', 'array-contains', 'bothwork').get().then(snapshot => {
+                snapshot.docs.forEach(doc => {
+                    console.log(doc.data())
+                    createElement(doc);
+                });
+            });
+          } 
+
+        // if they select work and skirt display wehere array contains skirtwork
+        else if(getTestSelect === 'work' && getStyleSelect === 'skirt'){
+          container.innerHTML ="";
+          db.collection('outfits').where('occasionoption', 'array-contains', 'skirtwork').get().then(snapshot => {
+            snapshot.docs.forEach(doc => {
+                console.log(doc.data())
+                createElement(doc);
+            });
+        });
+      } 
+
+      // if they slect work and trousers display where array contains trousers work
+      else if(getTestSelect === 'work' && getStyleSelect === 'trousers'){
+        container.innerHTML ="";
+        db.collection('outfits').where('occasionoption', 'array-contains', 'trouserwork').get().then(snapshot => {
           snapshot.docs.forEach(doc => {
               console.log(doc.data())
-             
               createElement(doc);
           });
       });
-  } 
-  else if(getTestSelect === 'work' && getStyleSelect === 'skirt'){
-    container.innerHTML ="";
-    db.collection('outfits').where('occasionoption', 'array-contains', 'skirtwork').get().then(snapshot => {
-     
-      
-      snapshot.docs.forEach(doc => {
-          console.log(doc.data())
-         
-          createElement(doc);
+      } 
+
+        // if they select romance and both display where arraycontains bothromance
+        else if(getTestSelect === 'romance' && getStyleSelect === 'both'){
+          container.innerHTML ="";
+          db.collection('outfits').where('occasionoption', 'array-contains', 'bothromance').get().then(snapshot => {
+            snapshot.docs.forEach(doc => {
+                console.log(doc.data())
+                createElement(doc);
+            });
+        });
+      } 
+
+      // if they select romance and skirt dusplay where arraycontains skirtromance
+      else if(getTestSelect === 'romance' && getStyleSelect === 'skirt'){
+        container.innerHTML ="";
+        db.collection('outfits').where('occasionoption', 'array-contains', 'skirtromance').get().then(snapshot => {  
+          snapshot.docs.forEach(doc => {
+              console.log(doc.data())
+              createElement(doc);
+          });
       });
-  });
-} 
-else if(getTestSelect === 'work' && getStyleSelect === 'trousers'){
-  container.innerHTML ="";
-  db.collection('outfits').where('occasionoption', 'array-contains', 'trouserwork').get().then(snapshot => {
-   
-    
-    snapshot.docs.forEach(doc => {
-        console.log(doc.data())
-       
-        createElement(doc);
-    });
-});
-} 
+      } 
 
-  else if(getTestSelect === 'romance' && getStyleSelect === 'both'){
-    container.innerHTML ="";
-    db.collection('outfits').where('occasionoption', 'array-contains', 'bothromance').get().then(snapshot => {
-     
-      
-      snapshot.docs.forEach(doc => {
-          console.log(doc.data())
-         
-          createElement(doc);
+      // if they select romance and trousers display where array contains trouserromance
+      else if(getTestSelect === 'romance' && getStyleSelect === 'trousers'){
+        container.innerHTML ="";
+        db.collection('outfits').where('occasionoption', 'array-contains', 'trouserromance').get().then(snapshot => {
+          snapshot.docs.forEach(doc => {
+              console.log(doc.data())
+              createElement(doc);
+          });
       });
-  });
-} 
-else if(getTestSelect === 'romance' && getStyleSelect === 'skirt'){
-  container.innerHTML ="";
-  db.collection('outfits').where('occasionoption', 'array-contains', 'skirtromance').get().then(snapshot => {
-   
-    
-    snapshot.docs.forEach(doc => {
-        console.log(doc.data())
-       
-        createElement(doc);
-    });
-});
-} 
-else if(getTestSelect === 'romance' && getStyleSelect === 'trousers'){
-  container.innerHTML ="";
-  db.collection('outfits').where('occasionoption', 'array-contains', 'trouserromance').get().then(snapshot => {
-   
-    
-    snapshot.docs.forEach(doc => {
-        console.log(doc.data())
-       
-        createElement(doc);
-    });
-});
-} 
+      } 
 
-else if(getTestSelect === 'walk' && getStyleSelect ==='both'){
-  container.innerHTML ="";
-  db.collection('outfits').where('occasionoption', 'array-contains', 'walk').get().then(snapshot => {
-   
-    
-    snapshot.docs.forEach(doc => {
-        console.log(doc.data())
-       
-        createElement(doc);
-    });
-});
-} 
-else if(getTestSelect === 'walk' && getStyleSelect ==='skirt'){
-  container.innerHTML ="";
-  db.collection('outfits').where('occasionoption', 'array-contains', 'walk').get().then(snapshot => {
-   
-    
-    snapshot.docs.forEach(doc => {
-        console.log(doc.data())
-       
-        createElement(doc);
-    });
-});
-} 
-else if(getTestSelect === 'walk' && getStyleSelect ==='trousers'){
-  container.innerHTML ="";
-  db.collection('outfits').where('occasionoption', 'array-contains', 'walk').get().then(snapshot => {
-   
-    
-    snapshot.docs.forEach(doc => {
-        console.log(doc.data())
-       
-        createElement(doc);
-    });
-});
-} 
-else if(getTestSelect === 'yoga' && getStyleSelect ==='both'){
-  container.innerHTML ="";
-  db.collection('outfits').where('occasionoption', 'array-contains', 'yoga').get().then(snapshot => {
-   
-    
-    snapshot.docs.forEach(doc => {
-        console.log(doc.data())
-       
-        createElement(doc);
-    });
-});
-} 
-else if(getTestSelect === 'yoga' && getStyleSelect ==='skirt'){
-  container.innerHTML ="";
-  db.collection('outfits').where('occasionoption', 'array-contains', 'yoga').get().then(snapshot => {
-   
-    
-    snapshot.docs.forEach(doc => {
-        console.log(doc.data())
-       
-        createElement(doc);
-    });
-});
-} 
-else if(getTestSelect === 'yoga' && getStyleSelect ==='trousers'){
-  container.innerHTML ="";
-  db.collection('outfits').where('occasionoption', 'array-contains', 'yoga').get().then(snapshot => {
-   
-    
-    snapshot.docs.forEach(doc => {
-        console.log(doc.data())
-       
-        createElement(doc);
-    });
-});
-} 
-else if(getTestSelect === 'concert' && getStyleSelect ==="both"){
-  container.innerHTML ="";
-  db.collection('outfits').where('occasionoption', 'array-contains', 'bothconcert').get().then(snapshot => {
-   
-   
-    snapshot.docs.forEach(doc => {
-        console.log(doc.data())
-       
-        createElement(doc);
-    });
-});
-} 
-else if(getTestSelect === 'concert' && getStyleSelect ==="skirt"){
-  container.innerHTML ="";
-  db.collection('outfits').where('occasionoption', 'array-contains', 'skirtconcert').get().then(snapshot => {
-   
-   
-    snapshot.docs.forEach(doc => {
-        console.log(doc.data())
-       
-        createElement(doc);
-    });
-});
-} 
-else if(getTestSelect === 'concert' && getStyleSelect ==="trousers"){
-  container.innerHTML ="";
-  db.collection('outfits').where('occasionoption', 'array-contains', 'trouserconcert').get().then(snapshot => {
-   
-   
-    snapshot.docs.forEach(doc => {
-        console.log(doc.data())
-       
-        createElement(doc);
-    });
-});
-} 
-else if(getTestSelect === 'sport' && getStyleSelect ==='both'){
-  container.innerHTML ="";
-  db.collection('outfits').where('occasionoption', 'array-contains', 'sport').get(Math.floor(Math.random() * 'sport'.length)).then(snapshot => {
-   
-    
-    snapshot.docs.forEach(doc => {
-        console.log(doc.data())
-       
-        createElement(doc);
-    });
-});
-}
-else if (getTestSelect ==='' && getStyleSelect === '' ){
-  alert("Oops! You need to select an option!");
-  
-  };
+      // if they select walk and both display where array contains walk
+      else if(getTestSelect === 'walk' && getStyleSelect ==='both'){
+        container.innerHTML ="";
+        db.collection('outfits').where('occasionoption', 'array-contains', 'walk').get().then(snapshot => {
+          snapshot.docs.forEach(doc => {
+              console.log(doc.data())
+              createElement(doc);
+          });
+      });
+      } 
 
-  // document.getElementById("reShuffleText").innerHTML = reshuffleHeading;
-  // document.getElementById("reShuffleBtn").style.display = 'block';
-  document.getElementById("textReShuffleAppear").innerHTML = '<h1>Dont like either? Thats ok, you  can reshuffle!</h1>';
-  document.getElementById("buttonAppear").innerHTML = '<button onclick="testing()">Reshuffle</button>';
+      // if they select walk and skirts display where array contains walk
+      else if(getTestSelect === 'walk' && getStyleSelect ==='skirt'){
+        container.innerHTML ="";
+        db.collection('outfits').where('occasionoption', 'array-contains', 'walk').get().then(snapshot => {
+          snapshot.docs.forEach(doc => {
+              console.log(doc.data())
+              createElement(doc);
+          });
+      });
+      } 
 
+      // if they select walk and trouser display where array contains walk
+      else if(getTestSelect === 'walk' && getStyleSelect ==='trousers'){
+        container.innerHTML ="";
+        db.collection('outfits').where('occasionoption', 'array-contains', 'walk').get().then(snapshot => {
+          snapshot.docs.forEach(doc => {
+              console.log(doc.data())
+            
+              createElement(doc);
+          });
+      });
+      } 
+
+      // if they select yoga and both display where array contains yoga
+      else if(getTestSelect === 'yoga' && getStyleSelect ==='both'){
+        container.innerHTML ="";
+        db.collection('outfits').where('occasionoption', 'array-contains', 'yoga').get().then(snapshot => {
+          snapshot.docs.forEach(doc => {
+              console.log(doc.data())
+              createElement(doc);
+          });
+      });
+      } 
+
+      // if they select yoga and skirt display where array contains yoga
+      else if(getTestSelect === 'yoga' && getStyleSelect ==='skirt'){
+        container.innerHTML ="";
+        db.collection('outfits').where('occasionoption', 'array-contains', 'yoga').get().then(snapshot => {
+          snapshot.docs.forEach(doc => {
+              console.log(doc.data())
+              createElement(doc);
+          });
+      });
+      } 
+
+      // if they select yoga and trousers display where array contains yoga
+      else if(getTestSelect === 'yoga' && getStyleSelect ==='trousers'){
+        container.innerHTML ="";
+        db.collection('outfits').where('occasionoption', 'array-contains', 'yoga').get().then(snapshot => {
+          snapshot.docs.forEach(doc => {
+              console.log(doc.data())
+              createElement(doc);
+          });
+      });
+      } 
+
+      // if they select concert and both disolay where array contains bothconcert
+      else if(getTestSelect === 'concert' && getStyleSelect ==="both"){
+        container.innerHTML ="";
+        db.collection('outfits').where('occasionoption', 'array-contains', 'bothconcert').get().then(snapshot => {
+          snapshot.docs.forEach(doc => {
+              console.log(doc.data())
+              createElement(doc);
+          });
+      });
+      } 
+
+      // ifthey select concert and skirt, display all outfits where array contains skirt concert
+      else if(getTestSelect === 'concert' && getStyleSelect ==="skirt"){
+        container.innerHTML ="";
+        db.collection('outfits').where('occasionoption', 'array-contains', 'skirtconcert').get().then(snapshot => {
+          snapshot.docs.forEach(doc => {
+              console.log(doc.data())
+              createElement(doc);
+          });
+      });
+      } 
+
+      // if they select concert and trousrs display all outfits where array contains trouser concert
+      else if(getTestSelect === 'concert' && getStyleSelect ==="trousers"){
+        container.innerHTML ="";
+        db.collection('outfits').where('occasionoption', 'array-contains', 'trouserconcert').get().then(snapshot => {
+          snapshot.docs.forEach(doc => {
+              console.log(doc.data())
+              createElement(doc);
+          });
+      });
+      } 
+
+      // if they select sport and both, it will displat array contains sport
+      else if(getTestSelect === 'sport' && getStyleSelect ==='both'){
+        container.innerHTML ="";
+        db.collection('outfits').where('occasionoption', 'array-contains', 'sport').get().then(snapshot => { 
+          snapshot.docs.forEach(doc => {
+              console.log(doc.data())
+              createElement(doc);
+          });
+      });
       }
-    
+
+      // if user hasnt selected anythign, an alett pops up
+      else if (getTestSelect ==='' || getStyleSelect === '' ){
+        alert("Oops! You need to select an option!");
+        
+        };
+
+      // put this text into these document ids when running this function
+      // the reshuffle button would allow the user to run the function again and reshuffle the choices bt unfortunately doesnt work how exoexted
+        document.getElementById("textReShuffleAppear").innerHTML = '<h1>Dont like either? Thats ok, you  can reshuffle!</h1>';
+        document.getElementById("buttonAppear").innerHTML = '<button onclick="testing()">Reshuffle</button>';
+
+            }
+          

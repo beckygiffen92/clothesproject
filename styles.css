@@ -1,30 +1,337 @@
+
+
+/* font family is all the same */
+/* declaring background colour to be off white */
+/* and for text to be this color */
 body{
-   
 font-family: 'futura-pt', sans-serif;
-
 font-weight: 500;
-
 font-style: normal;
 background-color: #FDFFFC;
 color: #090302;
 }
-nav{
-    background-color: #D55672!important;
-    padding: 80px;
-}
-.navbar{
-    
-    color: #FDFFFC;
-    
-    
-}
-.sidenav{
-background-color: #D55672!important;
+
+/* font sizes for all my elements */
+
+h1{
+  font-size: 40px;
 }
 
-.sidenav li a {
-  color: #FDFFFC!important;
+h2{
+font-size: 30px;
 }
+
+h3{
+  font-size: 20px;
+}
+
+h4{
+font-size: 16px;
+}
+
+p{
+font-size: 16px;
+font-weight: 400;
+}
+
+a{
+  font-size: 18px;
+}
+
+button{
+  font-size: 18px;
+}
+
+/* colour of background and padding of nav */
+nav{
+    background-color: #D55672;
+    padding: 80px;
+}
+
+/* font xolour of navbar */
+.navbar{
+    color: #FDFFFC;
+}
+
+/* declaring background colour of sidenav (mobile navbar) */
+.sidenav{
+background-color: #D55672;
+}
+
+/* font colour of mobile nav bar li items */
+.sidenav li a {
+  color: #FDFFFC;
+}
+
+/* large brand logo (estyler) and aligned it into center */
+.brand-logo{
+    font-size: 60px;
+    padding-bottom: 50px;
+    align-content: center;
+}
+
+/* background colour of modal, takes up 50% of the width and 600px */
+.modal{
+  background-color: #F3D9DC;
+  width: 50%;
+  height: 600px;
+}
+
+/* when you hover over the modal triggers in the nav bar, they will underline but be of the same background as they were already. this has to be done as materlize automatically puts a background colour onthem */
+.modal-trigger:hover{
+    text-decoration: underline;
+    background-color: inherit;
+}
+
+/* make the content of the modals in the center of the page, taking up 100% of the modal  */
+.modal-content{
+  margin: 10px;
+  padding: 20px;
+  background-color: #F3D9DC;
+  text-align: center;
+  width: 100%;
+}
+
+/* text colour of modal content */
+.modal-content input{
+  color: #090302;
+}
+
+/* the width of the images is 10% of its original sze */
+.modal-content img{
+  width: 10%;
+}
+
+/* finding the id name and making the p of that id have its text aligned to the left */
+#modal-colourpalettes p{
+text-align: left;
+}
+
+/* id of colwheel in modal content, width 30% of its original */
+.modal-content #colWheel{
+  width: 30%;
+}
+
+/* when you hover over the sign out button, the text underlines and the bakcground inherits the same background colour ofthe original as materialise automatically puts a colour ontop of it */
+#signout:hover{
+    text-decoration: underline;
+    background-color: inherit;  
+}
+
+/* putting redwaves into the center */
+#redWaveContainer{
+    padding: 20px;
+    text-align: center;
+}
+
+/* the image id of redwave is 10% its original size and places in the center of its container */
+#redWave{
+    width: 10%;
+    text-align: center;
+}
+
+/* the background of these containers have this colour, the text is aligned into the center and the width is 100% of the screen */
+#topImageContainer,#midImageContainer{
+    background-color: #F3D9DC;
+    text-align: center;
+    width: 100%;
+    
+}
+
+/* span colour that goes around the h1 tag has a small paddibg and this background colour of off white */
+h1 span{
+  background-color: #FDFFFC;
+  padding: 2px;
+}
+
+/* this class stops the h1 span of overlapping when you shrink the screen to a smaller device */
+.no-overlap{
+  text-overflow:ellipsis;
+white-space:no-wrap;
+overflow:hidden;
+}
+
+/* span colour that goes around the h2 tag has a small paddibg and this background colour of off white */
+h2 span{
+  background-color: #FDFFFC;
+  padding: 1px;
+}
+
+
+/* changing the size of the images so that they are 60% of thei original */
+#ladiesOutfitsImage,#ladiesOutfitsImageTwo{
+  width: 60%;
+}
+
+/* putting the container all in the center */
+#topCardsContainer{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  max-width: 70%;
+ 
+}
+
+/* putting the p of id of the container  to align to the left and have this font size */
+#topCardsContainer p{
+  text-align: left;
+  font-size: 18px;
+}
+
+/* materialize automatically does funny stuff to the margins  of row*/
+.row{
+  margin-right: 0;
+  
+}
+
+/* putting the discount list id to the left align text */
+#discount-list{
+  text-align: left;
+}
+
+/* display all the discount list h3 inline rather than underneath */
+#discount-list h3 {
+    display: inline;
+ 
+}
+
+/* change colour of font in the dropdown menu */
+.dropdown-content li a, .dropdown-content li span{
+  color: #4E5355;
+}
+
+/* so that the dropdown options the user selects has this red line underneath rather than the inherited green line from materliaze */
+.select-wrapper input.select-dropdown{
+border-bottom: 1px solid #D55672;
+}
+
+/* borer radius adds roundness to buttons, there is no border colour */
+button{
+ background: #96C5B0;
+ color: #06070E;
+ padding: 10px;
+ border: none;
+ border-radius: 4px;
+}
+
+/* when you hover over the buttons the colour changes  */
+button:hover{
+  background: #ADF1D2;
+}
+
+/* declairing containers have a max width of 100% as soemtimes materliaze throws them off the side */
+.container{
+  max-width: 100%;
+  text-align: center;
+}
+
+/* items in flexbox to display in one line */
+.flexbox {
+  display:inline-block;
+  text-align: center;
+}
+
+/* adding these properties to the cards, so that they stay in one column */
+.card {
+  background-color: #D55672;
+  color: #FDFFFC;
+  text-align:center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  margin: 10px;
+  margin-right: auto;
+  /* padding: 20px; */
+}
+
+/* putting card title into the center */
+.card-title{
+  text-align: center;
+}
+
+/* the whitewave image to take up 30% of its size */
+#whiteWave{
+  width: 30%;
+}
+
+/* needed this for materialize */
+* {
+  box-sizing: border-box;
+}
+
+/* item class to have these properties */
+.item {
+  width: 80%;
+  height: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #EE6055;
+  text-align: center;
+  align-content: center;
+  color: #FDFFFC;
+  font-size: 12px;
+}
+
+/* outfit viewer to display e erything in the center, to take up 100% of the width availabel */
+#outfitViewer{
+  justify-content: center;
+  padding: 20px;
+  margin: 10px;
+  margin-right: auto;
+  display: inline-block;
+  /* background-color: #F3D9DC; */
+  width: 100%;
+}
+
+/* image in outfit viewer to have a border and take up 50% of the width */
+#outfitViewer img{
+  border: 5px solid #D55672;
+  width: 50%;
+}
+
+/* h1 of outfit viewer to have this font size */
+#outfitViewer h1{
+  font-size: 40px;
+}
+
+/* h3 of outfit viewer to have this size */
+#outfitViewer h3{
+  font-size: 20px; 
+}
+
+/* instafeed container so that the items display in a flex ratehr than one on top of the other */
+#instafeed-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  margin-left: 30px;
+}
+
+/* height auto they will be as long as the content is, everything will be in the center and the width being 25% meaning that they sit nicely in their columsn */
+#instafeed-container .card{
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #F3D9DC;
+  color: #090302;
+  width: 25%;
+  margin: 10px;
+  padding: 20px;
+}
+
+/* image to take up 100% of the abvailable space in the container card */
+#instafeed-container img{
+  max-width: 100%;
+  height: auto;
+}
+
+/* footer properties */
+/* margin bottom stops there being a white space at the bottom of the screen */
 .footer{
   background-color: #F3D9DC;
   margin-bottom: -50px;
@@ -33,425 +340,121 @@ background-color: #D55672!important;
     padding: 80px;
 }
 
-.brand-logo{
-    font-size: 60px!important;
-    /* padding: 50px; */
-    padding-bottom: 50px!important;
-    align-content: center!important;
-}
-.modal{
-  
-  background-color: #F3D9DC!important;
-  width: 50%!important;
-  height: 600px!important;
-}
-.modal-trigger:hover{
-    text-decoration: underline;
-    background-color: inherit;
-}
-.modal-content{
-  margin: 10px;
-  padding: 20px;
-  background-color: #F3D9DC;
-  text-align: center;
-  width: 100%;
-}
-.modal-content input{
-  color: #090302;
-}
-.modal-content img{
-  width: 10%!important;
-}
-#modal-colourpalettes p{
-text-align: left;
-}
-.modal-content #colWheel{
-  width: 30%!important;
-}
-
-
-#signout:hover{
-    text-decoration: underline;
-    background-color: inherit;  
-}
-#redWaveContainer{
-    padding: 20px;
-    text-align: center;
-}
-#redWave{
-    width: 10%;
-    text-align: center;
-}
-#topImageContainer,#midImageContainer{
-  /* need to change this v v v */
-    /* margin-top: 100px; */
-    
-    background-color: #F3D9DC;
-    text-align: center;
-    width: 100%!important;
-    
-}
-h1 span{
-  background-color: #FDFFFC;
-  padding: 2px;
-}
-.no-overlap{
-  text-overflow:ellipsis;
-white-space:no-wrap;
-overflow:hidden;
-}
-h2 span{
-  background-color: #FDFFFC;
-  padding: 1px;
-}
-
-
-h1{
-    font-size: 40px!important;
-}
-h2{
-  font-size: 30px!important;
-}
-h3{
-    font-size: 20px!important;
-}
-h4{
-  font-size: 16px!important;
-}
-p{
-  font-size: 16px!important;
-  font-weight: 400;
-}
-a{
-    font-size: 18px!important;
-}
-button{
-    font-size: 18px!important;
-}
-#ladiesOutfitsImage,#ladiesOutfitsImageTwo{
-  width: 60%;
-}
-#topCardsContainer{
-  text-align: center!important;
- 
-  justify-content: center;
-  align-items: center;
- 
-  
-}
-
-#topCardsContainer p{
-  text-align: left!important;
-  font-size: 18px!important;
-}
-/* need to change width and height settings here and alignment*/
-.row{
-  margin-right: 0!important;
-  
-}
-#discount-list{
-  text-align: left!important;
-}
-#discount-list h3 {
-  
-    display: inline;
- 
-}
-
-/* change colour of font in the dropdown menu */
-.dropdown-content li a, .dropdown-content li span{
-  color: #4E5355!important;
-}
-.select-wrapper input.select-dropdown{
-border-bottom: 1px solid #D55672!important;
-}
-button{
- background: #96C5B0!important;
- color: #06070E;
- padding: 10px;
- border: none;
- border-radius: 4px;
-}
-button:hover{
-  background: #ADF1D2!important;
-}
-.container{
-  max-width: 100%!important;
-  text-align: center;
-  
- 
-}
-.flexbox {
-  display:inline-block;
-  
-  
-
-  text-align: center!important;
- 
- 
-  
-}
-#instafeed-container{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
- 
-  margin: 10px;
-  margin-left: 30px!important;
-}
-#instafeed-container .card{
-  height: auto;
-  justify-content: center;
-  align-items: center;
-  text-align: center!important;
-  background-color: #F3D9DC!important;
-  color: #090302;
-  width: 25%!important;
-  margin: 10px!important;
-  padding: 20px!important;
-}
-#instafeed-container img{
-  max-width: 100%;
-  height: auto!important;
-}
-
-/* .card{
-  display: flex; 
-  flex-flow: row wrap;
-  height: auto;
-  text-align:center!important;
-  justify-content: center;
-  align-items: center;
-  background-color: #D55672!important;
-  color: #FDFFFC;
-  width: 25%!important;
-  margin: 10px!important;
-  padding: 20px!important;
-} */
-.card {
-  background-color: #D55672!important;
-  color: #FDFFFC;
-  text-align:center!important;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  width: 25%!important;
-  margin: 10px!important;
-  margin-right: auto;
-  /* padding: 20px!important; */
-}
-
-/* cardswill take up 100% of width if smaller than 991px wide */
+/* changes when the screen is smaller than 991px wide */
 @media only screen and (max-width: 991px) {
     .card{
-      width: 100%!important;
-    }
-    #instafeed-container .card{
-      width: 100%!important;
+      width: 100%;
+      }
+      #instafeed-container .card{
+      width: 100%;
       }
       #instafeed-container img{
         max-width:70%;
       }
       h1{
-        font-size: 20px!important;
+        font-size: 20px;
       }
       h2{
-        font-size: 16px!important;
+        font-size: 16px;
       }
    
-    #topImageContainer,#midImageContainer{
-   
-     width: 100%!important;
-  }
-  #outfitViewer img{
-    border: 5px solid #D55672;
-    width: 50%!important;
-   
-    /* display: flex;
-    flex-wrap: wrap; */
-    
-  }
-  
-
-  }
-  @media only screen and (min-width: 425px) {
-    h1{
-      font-size: 20px!important;
-    }
-    h2{
-      font-size: 16px!important;
-    }
-    .card{
-      width: 100%!important;
-    }
-      #instaCaption{
-        font-size: 14px!important;
+      #topImageContainer,#midImageContainer{  
+      width: 100%;
       }
       #outfitViewer img{
         border: 5px solid #D55672;
-        width: 50%!important;
-       
-        /* display: flex;
-        flex-wrap: wrap; */
-        
-      }
-  
-  }
-  @media only screen and (min-width: 320px){
+        width: 50%;
+       }
 
+  }
+
+  /* changes when screen is at a minimum of 425px wide */
+  @media only screen and (min-width: 425px) {
     h1{
-      font-size: 20px!important;
+      font-size: 20px;
     }
     h2{
-      font-size: 16px!important;
+      font-size: 16px;
     }
     .card{
-      width: 100%!important;
+      width: 100%;
+    }
+    #instaCaption{
+      font-size: 14px;
+    }
+    #outfitViewer img{
+      border: 5px solid #D55672;
+      width: 50%;
+    }
+  
+  }
+
+  /* changes when screen is at a min of 320px wide */
+  @media only screen and (min-width: 320px){
+    h1{
+      font-size: 20px;
+    }
+    h2{
+      font-size: 16px;
+    }
+    .card{
+      width: 100%;
     }
       #instafeed-container img{
         max-width:100%;
       }
       #instaCaption{
-        font-size: 14px!important;
+        font-size: 14px;
       }
       #outfitViewer img{
         border: 5px solid #D55672;
-        width: 50%!important;
-       
-        /* display: flex;
-        flex-wrap: wrap; */
-        
+        width: 50%;
       }
   }
   
-  
+
+  /* changes when a screen is at a min of 525px wide */
   @media only screen and (min-width: 525px) {
    .card{
-     width: 100%!important;  
-   }
-      #instafeed-container img{
-       max-width:100%;
-      }
-     #imageCaption{
-       font-size: 16px!important;
+     width: 100%;  
+    }
+    #instafeed-container img{
+      max-width:100%;
      }
-     #outfitViewer img{
+    #imageCaption{
+       font-size: 16px;
+     }
+    #outfitViewer img{
       border: 5px solid #D55672;
-      width: 50%!important;
-     
-      /* display: flex;
-      flex-wrap: wrap; */
-      
+      width: 50%;
     }
   }
   
+  /* changes when a screen is at a min of 992px wide */
   @media only screen and (min-width: 992px) {
     .card{
-      width: 25%!important;
+      width: 25%;
     }
     #instafeed-container img{
-      width: 100%!important;
+      width: 100%;
     }
     #instaCaption{
-      font-size: 18px!important;
+      font-size: 18px;
     }
     h1{
-      font-size: 40px!important;
+      font-size: 40px;
 
     }
     h2{
-      font-size: 30px!important;
+      font-size: 30px;
     }
     #outfitViewer img{
-      border: 50px solid #D55672!important;
-      width: 50%!important;
-     
-      /* display: flex;
-      flex-wrap: wrap; */
-      
+      border: 50px solid #D55672;
+      width: 50%;
     }
   }
-  
-  /* cardswill take up 30% of width if atleast 992px wide */
-
-.card-title{
-    text-align: center;
-}
-
-#whiteWave{
-    width: 30%;
-}
 
 
-
-/* practicing with fade ins */
-* {
-    box-sizing: border-box;
-  }
-  
-  .item {
-      /* float: left; */
-   
-    width: 80%;
-    height: 600px;
-    margin: 0 auto;
-    
-    padding: 20px;
-    background: #EE6055;
-    text-align: center;
-    align-content: center!important;
-    color: #FDFFFC;
-    font-size: 12px;
-  }
-
-  
-  #outfitViewer{
-    justify-content: center!important;
-    /* text-align: left!important; */
-    padding: 20px!important;
-    margin: 10px!important;
-    margin-right: auto!important;
-    display: inline-block!important;
-    /* background-color: #F3D9DC!important; */
-    width: 100%!important;
-  }
-  #outfitViewer img{
-    border: 5px solid #D55672;
-    width: 50%!important;
-   
-    /* display: flex;
-    flex-wrap: wrap; */
-    
-  }
-  #outfitViewer h1{
-    font-size: 40px!important;
-    
-  }
-  #outfitViewer h3{
-    font-size: 20px!important;
-    
-  }
-  #outfitOne{
-     float: right;
-    display:none;
-  
-    position: relative;
-    left: -400px;
-    animation: slide 0.4sforwards;
-    -webkit-animation: slide 0.4s forwards;
-    
-  }
-  #outfitTwo{
-    float: left;
-    display:none;
-    
-    position: relative;
-    right: -400px;
-    animation: slide 0.4sforwards;
-    -webkit-animation: slide 0.4s forwards;
-  }
   @-webkit-keyframes slide {
     100% {
       left: 0;
@@ -464,7 +467,4 @@ button:hover{
       right: 0;
     }
   }
-  #orCont{
-     
-      text-align: center;
-  }
+
